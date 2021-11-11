@@ -27,7 +27,7 @@
             "value": "https://www.linkedin.com/in/abdelkoddous-zadelkhair-163b64164/"
         }
     ],
-    "cv": "",
+    "cv": "/assets/cv_zadelkhair_abdelkoddous_developer_fullstack.pdf",
     "aboutme": "My name is ABDELKODDOUS ZADELKHAIR I'm 21 years old, full stack web developer (LARAVEL & VUEJS) with a vast array of knowledge in many different front end and back end languages, responsive frameworks, databases, desktop and mobile applications ( C# and JAVA ). and best coding practices.",
     "whatido": [
         {
@@ -49,29 +49,49 @@
     "skills": {
         "tech": [
             {
-                "name": "javascript",
-                "rate": 86,
+                "name": "php",
+                "rate": 90,
                 "useit": true
             },
             {
-                "name": "php",
-                "rate": 86,
+                "name": "laravel",
+                "rate": 95,
+                "useit": true
+            },
+            {
+                "name": "vuejs",
+                "rate": 95,
+                "useit": true
+            },
+            {
+                "name": "angular",
+                "rate": 95,
+                "useit": true
+            },
+            {
+                "name": "javascript",
+                "rate": 93,
+                "useit": true
+            },
+            {
+                "name": "react native",
+                "rate": 80,
                 "useit": true
             },
             {
                 "name": "java",
-                "rate": 86,
+                "rate": 80,
                 "useit": true
             },
             {
                 "name": "c#",
-                "rate": 86,
+                "rate": 80,
                 "useit": true
             },
             {
                 "name": "html/css",
-                "rate": 86,
-                "useit": false
+                "rate": 95,
+                "useit": true
             }
         ],
         "profes": [
@@ -95,30 +115,30 @@
     },
     "education": [
         {
-            "title": "Art & Multimedia From",
+            "title": "Bachelor",
             "place": {
-                "name": "Oxford University",
-                "link": "#"
+                "name": "University Ibn Zohr",
+                "link": "https://www.uiz.ac.ma/node/236/"
             },
-            "date": "2005-2008",
-            "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum"
+            "date": "2018-2021",
+            "content": "the 'Computer Engineering' bachlor takes six semesters.\nThe main objective of this training is to train operational and competent IT specialists in the various fields of IT in particular, the design and development of software, Web technologies, the implementation of information systems, configuration and network administration, database administration, new mobile technologies, data analysis etc."
         },
         {
-            "title": "Art & Multimedia From",
+            "title": "Skilled Technician in Software Development Diploma",
             "place": {
-                "name": "Oxford University",
-                "link": "#"
+                "name": "ISTICG OFPPT, Berrechid",
+                "link": "https://www.ofppt.ma/en/branches/it-development-techniques"
             },
-            "date": "2005-2008",
-            "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum"
+            "date": "2018-2020",
+            "content": "The 'Skilled Technician in Software Development' is a support professional development and maintenance of computer applications. It intervenes, usually on behalf of companies Services and Computer Engineering, in many application areas (industry, management, leisure etc.).Upstream of the project the technician is responsive to customer expectations. This study accurately a number of parameters to carry out his mission; these include specifications, capacity of the technical environment and the constraints of the customer's production system. Downstream, it participates in the commissioning and technical support of the application."
         },
         {
-            "title": "Art & Multimedia From",
+            "title": "Height School Diploma",
             "place": {
-                "name": "Oxford University",
-                "link": "#"
+                "name": "School Ouled Hriz (Lycée Ouled Hriz)",
+                "link": "https://www.men.gov.ma/Fr/Pages/Ens-secoqualif.aspx"
             },
-            "date": "2005-2008",
+            "date": "2015-2017",
             "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum"
         }
     ],
