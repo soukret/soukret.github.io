@@ -28,13 +28,8 @@
         }
     ],
     "cv": "",
-    "aboutme": "Hello, I’m a Patrick, web-developer based on Paris. I have rich experience in web site design & building and customization. Also I am good at",
+    "aboutme": "My name is ABDELKODDOUS ZADELKHAIR I'm 21 years old, full stack web developer (LARAVEL & VUEJS) with a vast array of knowledge in many different front end and back end languages, responsive frameworks, databases, desktop and mobile applications ( C# and JAVA ). and best coding practices.",
     "whatido": [
-        {
-            "logo": "fa fa-bullseye purple-color",
-            "title": "UI Design",
-            "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
-        },
         {
             "logo": "fa fa-bullseye purple-color",
             "title": "Web Development",
@@ -43,6 +38,11 @@
         {
             "logo": "fa fa-bullseye purple-color",
             "title": "App Development",
+            "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
+        },
+        {
+            "logo": "fa fa-bullseye purple-color",
+            "title": "UI Design",
             "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
         }
     ],
