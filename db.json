@@ -1,0 +1,154 @@
+{
+    "fullname": "ZADELKHAIR ABDELKODDOUS",
+    "img": "/assets/images/me.jpg",
+    "job": "Full stack web developer",
+    "email": "abdo.zad.raja2@gmail.com",
+    "phone": "+212680096104",
+    "adresse": "104, Rue Soussa, Hay Naima, Berrechid, Morocco",
+    "socialmedia": [
+        {
+            "name": "facebook",
+            "logo": "fab fa-facebook-f mr-3",
+            "value": "https://www.facebook.com/Zadelkhair.Abdelkoddous/"
+        },
+        {
+            "name": "twitter",
+            "logo": "fab fa-twitter mr-3",
+            "value": "https://twitter.com/zad_elkhair?lang=ar"
+        },
+        {
+            "name": "github",
+            "logo": "fab fa-github mr-3",
+            "value": "https://github.com/Zadelkhair"
+        },
+        {
+            "name": "linkedin",
+            "logo": "fab fa-linkedin-in",
+            "value": "https://www.linkedin.com/in/abdelkoddous-zadelkhair-163b64164/"
+        }
+    ],
+    "cv": "",
+    "aboutme": "Hello, I’m a Patrick, web-developer based on Paris. I have rich experience in web site design & building and customization. Also I am good at",
+    "whatido": [
+        {
+            "logo": "fa fa-bullseye purple-color",
+            "title": "UI Design",
+            "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
+        },
+        {
+            "logo": "fa fa-bullseye purple-color",
+            "title": "Web Development",
+            "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
+        },
+        {
+            "logo": "fa fa-bullseye purple-color",
+            "title": "App Development",
+            "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
+        }
+    ],
+    "skills": {
+        "tech": [
+            {
+                "name": "javascript",
+                "rate": 86,
+                "useit": true
+            },
+            {
+                "name": "php",
+                "rate": 86,
+                "useit": true
+            },
+            {
+                "name": "java",
+                "rate": 86,
+                "useit": true
+            },
+            {
+                "name": "c#",
+                "rate": 86,
+                "useit": true
+            },
+            {
+                "name": "html/css",
+                "rate": 86,
+                "useit": false
+            }
+        ],
+        "profes": [
+            {
+                "name": "Communication",
+                "rate": 86
+            },
+            {
+                "name": "Team Work",
+                "rate": 86
+            },
+            {
+                "name": "Project Management",
+                "rate": 86
+            },
+            {
+                "name": "Creativity",
+                "rate": 86
+            }
+        ]
+    },
+    "education": [
+        {
+            "title": "Art & Multimedia From",
+            "place": {
+                "name": "Oxford University",
+                "link": "#"
+            },
+            "date": "2005-2008",
+            "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum"
+        },
+        {
+            "title": "Art & Multimedia From",
+            "place": {
+                "name": "Oxford University",
+                "link": "#"
+            },
+            "date": "2005-2008",
+            "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum"
+        },
+        {
+            "title": "Art & Multimedia From",
+            "place": {
+                "name": "Oxford University",
+                "link": "#"
+            },
+            "date": "2005-2008",
+            "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum"
+        }
+    ],
+    "experience": [
+        {
+            "title": "Art & Multimedia From",
+            "place": {
+                "name": "Oxford University",
+                "link": "#"
+            },
+            "date": "2005-2008",
+            "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum"
+        },
+        {
+            "title": "Art & Multimedia From",
+            "place": {
+                "name": "Oxford University",
+                "link": "#"
+            },
+            "date": "2005-2008",
+            "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum"
+        },
+        {
+            "title": "Art & Multimedia From",
+            "place": {
+                "name": "Oxford University",
+                "link": "#"
+            },
+            "date": "2005-2008",
+            "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum"
+        }
+    ]
+}
