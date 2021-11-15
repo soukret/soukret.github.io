@@ -15,6 +15,7 @@
         * {
             margin: 0;
             padding: 0;
+            outline: none;
         }
 
         #resume {
@@ -86,6 +87,8 @@
 
         .skills-section .subskill-rating {
             display: flex;
+            flex: 1;
+            justify-content: end;
         }
 
         .skills-section .subskill-rating>div {
@@ -227,9 +230,58 @@
             cursor: pointer;
         }
 
+        .delete-btn,
+        .hide-btn {
+            border-radius: 5px;
+            position: absolute;
+            right: 20px;
+            padding: 3px;
+            font-size: 10px;
+            border: none;
+            background: rgba(38, 0, 255, 0.157);
+            color: white;
+            cursor: pointer;
+        }
+
+        .delete-btn{
+            background: rgba(255, 0, 0, 0.157);
+        }
+
+        *:hover > .delete-btn {
+            background: red;
+        }
+
+        *:hover > .hide-btn {
+            background: rgb(38, 0, 255);
+        }
+
+        .hide-background {
+            display: none;
+            cursor: pointer;
+        }
+
+        .hide-section{
+            height: 100px;
+            overflow: hidden;
+            position: relative;
+            opacity: .3;
+        }
+
+        .hide-section > .hide-background{
+            background: black;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 99;
+            opacity: .3;
+        }
+
         @media print {
 
-            
+
             /*div,span,p,section,li,ul,img {
                 break-inside: avoid;
             }*/
@@ -260,7 +312,18 @@
             .settings {
                 display: none !important;
             }
-            
+
+            .delete-btn,.hide-btn {
+                display: none !important;
+            }
+
+            .hide-section{
+                display: none!important;
+            }
+
+            .hide-background{
+                display: none!important;
+            }
 
         }
     </style>
@@ -273,7 +336,7 @@
 </head>
 
 <body>
-    <div id="resume">
+    <div id="resume" contenteditable>
         <div class="settings">
             <div class="setting-item setting-color">
                 color :
@@ -298,6 +361,14 @@
         <div class="sidebar">
             <div class="border"></div>
             <section class="info-section">
+                
+                <button class="hide-btn" @click="(e)=>{ console.log(e.target.parentElement.classList.add('hide-section')); }" >
+                    hide
+                </button>
+
+                <div class="hide-background" @click="(e)=>{ console.log(e.target.parentElement.classList.remove('hide-section')) }">
+                </div>
+
                 <div class="title">
                     INFO
                 </div>
@@ -333,18 +404,34 @@
                 </div>
             </section>
             <section class="skills-section">
+                
+                <button class="hide-btn" @click="(e)=>{ console.log(e.target.parentElement.classList.add('hide-section')); }" >
+                    hide
+                </button>
+
+                <div class="hide-background" @click="(e)=>{ console.log(e.target.parentElement.classList.remove('hide-section')) }">
+                </div>
+
                 <div class="title">
                     SKILLS
                 </div>
                 <div class="section-content">
-                    <div class="skill" v-for="skill in resume.skills">
+                    <div class="skill" v-for="(skill,i) in resume.skills">
+
+                        <button class="delete-btn" @click="resume.skills.splice(i, 1);" >
+                            delete
+                        </button>
+
                         <span class="skill-title">{{ skill.name }}</span>
                         <div class="skill-content">
-                            <div class="subskill" v-for="sskill in skill.subskills">
+                            <div class="subskill" v-for="(sskill,i) in skill.subskills">
                                 <div class="subskill-name">{{ sskill.name }}</div>
+                                <button style="position: relative;margin-left: 30px;" class="delete-btn" @click="skill.subskills.splice(i, 1);" >
+                                    delete
+                                </button>
                                 <div class="subskill-rating">
-                                    <div v-for="a in sskill.level"></div>
-                                    <div style="background: gray !important;" v-for="b in (5-sskill.level)"></div>
+                                    <div v-for="(a,i) in sskill.level" @click="sskill.level=i+1"></div>
+                                    <div style="background: gray !important;" v-for="(b,i) in (5-sskill.level)" @click="sskill.level=i+sskill.level+1"></div>
                                 </div>
                             </div>
                         </div>
@@ -354,11 +441,26 @@
         </div>
         <div class="content">
             <div class="resume-head">
+                <button class="hide-btn" @click="(e)=>{ console.log(e.target.parentElement.classList.add('hide-section')); }" >
+                    hide
+                </button>
+
+                <div class="hide-background" @click="(e)=>{ console.log(e.target.parentElement.classList.remove('hide-section')) }">
+                </div>
+
                 <span class="lastname">{{ lastname }}</span><br>
                 <span class="firstname">{{ firstname }}</span><br>
                 <span class="profession">{{ job }}</span>
             </div>
             <section>
+
+                <button class="hide-btn" @click="(e)=>{ console.log(e.target.parentElement.classList.add('hide-section')); }" >
+                    hide
+                </button>
+
+                <div class="hide-background" @click="(e)=>{ console.log(e.target.parentElement.classList.remove('hide-section')) }">
+                </div>
+
                 <div class="title">PROFILE</div>
                 <div class="profile-content">
                     <p>
@@ -367,12 +469,23 @@
                 </div>
             </section>
             <section class="edu-exp-section">
+
+                <button class="hide-btn" @click="(e)=>{ console.log(e.target.parentElement.classList.add('hide-section')); }" >
+                    hide
+                </button>
+
+                <div class="hide-background" @click="(e)=>{ console.log(e.target.parentElement.classList.remove('hide-section')) }">
+                </div>
+
                 <div class="title">
                     EDUCATION
                 </div>
                 <div class="edu-exp-content">
 
-                    <div class="edu-exp-item" v-for="edu in education">
+                    <div class="edu-exp-item" v-for="(edu,i) in education">
+                        <button class="delete-btn" @click="education.splice(i, 1);" >
+                            delete
+                        </button>
                         <div class="time-line">
                             <div class="time-line-border"></div>
                         </div>
@@ -398,11 +511,22 @@
                 </div>
             </section>
             <section class="edu-exp-section">
+                
+                <button class="hide-btn" @click="(e)=>{ console.log(e.target.parentElement.classList.add('hide-section')); }" >
+                    hide
+                </button>
+
+                <div class="hide-background" @click="(e)=>{ console.log(e.target.parentElement.classList.remove('hide-section')) }">
+                </div>
+
                 <div class="title">
                     EXPERIENCE
                 </div>
                 <div class="edu-exp-content">
-                    <div class="edu-exp-item" :style="exp.style" v-for="exp in experience">
+                    <div class="edu-exp-item" :style="exp.style" v-for="(exp,i) in experience">
+                        <button class="delete-btn" @click="experience.splice(i, 1);" >
+                            delete
+                        </button>
                         <div class="time-line">
                             <div class="time-line-border"></div>
                         </div>
@@ -419,7 +543,7 @@
                                 {{ exp.place.name }}
                             </span>
                             <br>
-                            <p >
+                            <p>
                                 {{ exp.content }}
                             </p>
                         </div>
