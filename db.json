@@ -1,5 +1,7 @@
 {
     "fullname": "ZADELKHAIR ABDELKODDOUS",
+    "firstname": "ABDELKODDOUS",
+    "lastname": "ZADELKHAIR",
     "img": "/assets/images/me.jpg",
     "job": "Full stack web developer",
     "email": "abdo.zad.raja2@gmail.com",
@@ -27,8 +29,8 @@
             "value": "https://www.linkedin.com/in/abdelkoddous-zadelkhair-163b64164/"
         }
     ],
-    "cv": "/assets/cv_zadelkhair_abdelkoddous_developer_fullstack.pdf",
-    "aboutme": "My name is ABDELKODDOUS ZADELKHAIR I'm 21 years old, full stack web developer (LARAVEL & VUEJS) with a vast array of knowledge in many different front end and back end languages, responsive frameworks, databases, desktop and mobile applications ( C# and JAVA ). and best coding practices.",
+    "cv": "/assets/zadelkhair_abdelkoddous_resume.pdf",
+    "aboutme": "My name is ABDELKODDOUS ZADELKHAIR I'm 23 years old, full stack web developer (LARAVEL & VUEJS) with a vast array of knowledge in many different front end and back end languages, responsive frameworks, databases, desktop and mobile applications ( C# and JAVA ). and best coding practices.",
     "whatido": [
         {
             "logo": "fa fa-bullseye purple-color",
@@ -115,13 +117,14 @@
     },
     "education": [
         {
-            "title": "Bachelor",
+            "title": "Bachlor Of Computer Science",
             "place": {
-                "name": "University Ibn Zohr",
+                "name": "University Ibn Zohr, Taroudant",
                 "link": "https://www.uiz.ac.ma/node/236/"
             },
-            "date": "2018-2021",
-            "content": "the 'Computer Engineering' bachlor takes six semesters.\nThe main objective of this training is to train operational and competent IT specialists in the various fields of IT in particular, the design and development of software, Web technologies, the implementation of information systems, configuration and network administration, database administration, new mobile technologies, data analysis etc."
+            "date": "2020 - 2021",
+            "details": "the 'Computer Engineering' bachlor takes six semesters.\nThe main objective of this training is to train operational and competent IT specialists in the various fields of IT in particular, the design and development of software, Web technologies, the implementation of information systems, configuration and network administration, database administration, new mobile technologies, data analysis etc.",
+            "content": "i got my bachelor of computer science with honor degree ( 16/20 )."
         },
         {
             "title": "Skilled Technician in Software Development Diploma",
@@ -129,46 +132,358 @@
                 "name": "ISTICG OFPPT, Berrechid",
                 "link": "https://www.ofppt.ma/en/branches/it-development-techniques"
             },
-            "date": "2018-2020",
-            "content": "The 'Skilled Technician in Software Development' is a support professional development and maintenance of computer applications. It intervenes, usually on behalf of companies Services and Computer Engineering, in many application areas (industry, management, leisure etc.).Upstream of the project the technician is responsive to customer expectations. This study accurately a number of parameters to carry out his mission; these include specifications, capacity of the technical environment and the constraints of the customer's production system. Downstream, it participates in the commissioning and technical support of the application."
+            "date": "2018 - 2020",
+            "details": "The 'Skilled Technician in Software Development' is a support professional development and maintenance of computer applications. It intervenes, usually on behalf of companies Services and Computer Engineering, in many application areas (industry, management, leisure etc.).Upstream of the project the technician is responsive to customer expectations. This study accurately a number of parameters to carry out his mission; these include specifications, capacity of the technical environment and the constraints of the customer's production system. Downstream, it participates in the commissioning and technical support of the application.",
+            "content": "I got this diploma in software development with honor degree ( 17/20 )."
         },
         {
             "title": "Height School Diploma",
             "place": {
-                "name": "School Ouled Hriz (Lycée Ouled Hriz)",
+                "name": "Ouled Hriz, Berrechid",
                 "link": "https://www.men.gov.ma/Fr/Pages/Ens-secoqualif.aspx"
             },
-            "date": "2015-2017",
-            "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum"
+            "date": "2016 - 2017",
+            "details": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum",
+            "content": "high school diploma scientific Ouled Hriz Berrechid."
         }
     ],
     "experience": [
         {
-            "title": "Art & Multimedia From",
+            "title": "stock management system",
             "place": {
-                "name": "Oxford University",
+                "name": "direction des impôts , Marrakech",
                 "link": "#"
             },
-            "date": "2005-2008",
-            "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum"
+            "date": "2021 - Present",
+            "details": "",
+            "content": "Stock management application for the human resources department of the tax administration in Marrakech.",
+            "hideinweb":true
         },
         {
-            "title": "Art & Multimedia From",
+            "title": "elwadifa.info",
             "place": {
-                "name": "Oxford University",
+                "name": "freelance",
                 "link": "#"
             },
-            "date": "2005-2008",
-            "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum"
+            "date": "2021 - Present",
+            "details": "",
+            "content": "job announcement website.",
+            "hideinweb":true
         },
         {
-            "title": "Art & Multimedia From",
+            "title": "traineeship at AGRI4.0",
             "place": {
-                "name": "Oxford University",
+                "name": "Agri 4.0, AGADIR",
                 "link": "#"
             },
-            "date": "2005-2008",
-            "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum"
+            "date": "2021 - 3 months",
+            "details": "",
+            "content": "3-month internship at the agri 4.0 company, I developed during this internship a mobile application that manages a nursery with reactnative laravel technology.",
+            "hideinweb":false
+        },
+        {
+            "title": "Frontend developer at ZadTech",
+            "place": {
+                "name": "ZadTech, Elmohammadia",
+                "link": "#"
+            },
+            "date": "2020 - 5 months",
+            "details": "",
+            "content": "Frontend developer ( vuejs and angular ) at zadtech company.",
+            "hideinweb":false
+        },
+        {
+            "title": "IT administrator at Al-Khayrat",
+            "place": {
+                "name": "Al-khayrat, Berrechid ",
+                "link": "#"
+            },
+            "date": "2016-2020",
+            "details": "",
+            "content": "i worked as an it administrator, i have developed during this period multiple application, Candidate administration ( desktop application with c# ) , code permis al khayrat ( android version with java , disktop application with c# , web version with php ' laravel ' / vuejs )",
+            "hideinweb":false
+        },
+        {
+            "title": "utory.ma",
+            "place": {
+                "name": "freelance,Berrechid",
+                "link": "#"
+            },
+            "date": "2021",
+            "details": "",
+            "content": "UTORY , school management course online With laravel and vuejsWith laravel and vuejs.",
+            "hideinweb":true
+        },
+        {
+            "title": "Fullstack web developer Freelancer",
+            "place": {
+                "name": "Morocco",
+                "link": "#"
+            },
+            "date": "2019-2021",
+            "details": "",
+            "content": "Fullstack web developer laravel/vuejs",
+            "hideinweb":false
+        },
+        {
+            "title": "Code permis",
+            "place": {
+                "name": "Alkhayrat, Berrechid",
+                "link": "#"
+            },
+            "date": "2021",
+            "details": "",
+            "content": "Code permis , android application with Java and SQLite",
+            "hideinweb":true
+        },
+        {
+            "title": "Code Alkhayrat",
+            "place": {
+                "name": "Alkhayrat, Berrechid",
+                "link": "#"
+            },
+            "date": "2020",
+            "details": "",
+            "content": "CODE AL KHAYRAT , with laravel/vuejs and graphql",
+            "hideinweb":true
+        },
+        {
+            "title": "Dental care",
+            "place": {
+                "name": "Frelance, Berrechid",
+                "link": "#"
+            },
+            "date": "2020",
+            "details": "",
+            "content": "dental care  Web application with LARAVEL and VUEJS",
+            "hideinweb":true
+        },
+        {
+            "title": "ISTICG",
+            "place": {
+                "name": "ISTICG, Berrechid",
+                "link": "#"
+            },
+            "date": "2019",
+            "details": "",
+            "content": "timeline table management, desktop application with c# and sql server",
+            "hideinweb":true
         }
-    ]
+    ],
+    "resume": {
+        "skills": [
+            {
+                "name": "BACKEND",
+                "subskills": [
+                    {
+                        "name": "LARAVEL",
+                        "level": 5
+                    },
+                    {
+                        "name": "PHP",
+                        "level": 5
+                    },
+                    {
+                        "name": "REST API",
+                        "level": 5
+                    },
+                    {
+                        "name": "SQL",
+                        "level": 5
+                    },
+                    {
+                        "name": "GRAPH QL",
+                        "level": 5
+                    },
+                    {
+                        "name": "JAVA",
+                        "level": 5
+                    }
+                ]
+            },
+            {
+                "name": "FRONTEND",
+                "subskills": [
+                    {
+                        "name": "VUEJS",
+                        "level": 5
+                    },
+                    {
+                        "name": "ANGULAR JS",
+                        "level": 5
+                    },
+                    {
+                        "name": "REACT NATIVE",
+                        "level": 5
+                    },
+                    {
+                        "name": "HTML",
+                        "level": 5
+                    },
+                    {
+                        "name": "CSS",
+                        "level": 5
+                    },
+                    {
+                        "name": "JS",
+                        "level": 5
+                    },
+                    {
+                        "name": "BOOTSTRAP",
+                        "level": 5
+                    },
+                    {
+                        "name": "JQUERY",
+                        "level": 5
+                    },
+                    {
+                        "name": "VUEX",
+                        "level": 5
+                    }
+                ]
+            },
+            {
+                "name": "DATABASE",
+                "subskills": [
+                    {
+                        "name": "MYSQL",
+                        "level": 5
+                    },
+                    {
+                        "name": "SQL SERVER",
+                        "level": 5
+                    },
+                    {
+                        "name": "ORACLE DB",
+                        "level": 5
+                    },
+                    {
+                        "name": "SQL LITE",
+                        "level": 5
+                    },
+                    {
+                        "name": "FIREBASE",
+                        "level": 5
+                    }
+                ]
+            },
+            {
+                "name": "MODELING",
+                "subskills": [
+                    {
+                        "name": "UML",
+                        "level": 5
+                    },
+                    {
+                        "name": "MERISE",
+                        "level": 5
+                    }
+                ]
+            },
+            {
+                "name": "DISKTOP",
+                "subskills": [
+                    {
+                        "name": "C#",
+                        "level": 5
+                    },
+                    {
+                        "name": ".NET",
+                        "level": 5
+                    },
+                    {
+                        "name": "JAVA",
+                        "level": 5
+                    }
+                ]
+            },
+            {
+                "name": "MOBILE",
+                "subskills": [
+                    {
+                        "name": "JAVA",
+                        "level": 5
+                    },
+                    {
+                        "name": "ANDROID",
+                        "level": 5
+                    },
+                    {
+                        "name": "REACT NATIVE",
+                        "level": 5
+                    },
+                    {
+                        "name": "FIREBASE",
+                        "level": 5
+                    }
+                ]
+            },
+            {
+                "name": "OTHER",
+                "subskills": [
+                    {
+                        "name": "npm",
+                        "level": 5
+                    },
+                    {
+                        "name": "git",
+                        "level": 5
+                    },
+                    {
+                        "name": "ubuntu 20",
+                        "level": 5
+                    },
+                    {
+                        "name": "windows server",
+                        "level": 5
+                    },
+                    {
+                        "name": "webpack",
+                        "level": 5
+                    },
+                    {
+                        "name": "access",
+                        "level": 5
+                    },
+                    {
+                        "name": "excel",
+                        "level": 5
+                    },
+                    {
+                        "name": "word",
+                        "level": 5
+                    },
+                    {
+                        "name": "powerpoint",
+                        "level": 5
+                    }
+                ]
+            },
+            {
+                "name": "DESIGN",
+                "subskills": [
+                    {
+                        "name": "Design Software",
+                        "level": 5
+                    },
+                    {
+                        "name": "Photoshop",
+                        "level": 5
+                    },
+                    {
+                        "name": "illustrator",
+                        "level": 5
+                    },
+                    {
+                        "name": "adobe xd",
+                        "level": 5
+                    },
+                    {
+                        "name": "figma",
+                        "level": 5
+                    }
+                ]
+            }
+        ]
+    }
 }

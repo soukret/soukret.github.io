@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;700&display=swap');
+
+        :root {
+            --main-color: green;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #resume {
+            font-family: 'Almarai', sans-serif;
+            display: flex;
+            justify-content: space-between;
+            size: 21cm 29.7cm;
+            margin: 30mm 45mm 30mm 45mm;
+            /* change the margins as you want them to be. */
+        }
+
+        .sidebar {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            padding-right: 20px;
+            position: relative;
+        }
+
+        .sidebar .border {
+            border: dashed rgb(194, 194, 194);
+            border-width: 0 2px 0 0;
+            min-height: 100vh;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .content {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            padding-left: 20px;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+        }
+
+        section .title {
+            font-weight: bold;
+            color: var(--main-color);
+            margin-bottom: 5px;
+        }
+
+        .info-section .info-title {
+            font-weight: bold;
+            margin-top: 4px;
+        }
+
+        .skills-section .skill {
+            margin-bottom: 10px;
+        }
+
+        .skills-section .skill-title {
+            font-weight: bold;
+            margin-top: 4px;
+        }
+
+        .skills-section .subskill {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .skills-section .subskill-rating {
+            display: flex;
+        }
+
+        .skills-section .subskill-rating>div {
+            height: 12px;
+            width: 12px;
+            background: var(--main-color) !important;
+            margin-left: 3px;
+            border-radius: 100%;
+            -webkit-print-color-adjust: exact;
+        }
+
+        .resume-head {
+            line-height: 1;
+            margin-bottom: 50px;
+        }
+
+        .resume-head .lastname {
+            font-weight: bold;
+        }
+
+        .resume-head .lastname,
+        .resume-head .firstname {
+            font-size: 40px;
+        }
+
+        .resume-head .profession {}
+
+        .profile-content {
+            text-align: justify;
+        }
+
+        .edu-exp-section .edu-exp-item {
+            display: flex;
+            margin: 0;
+            padding-bottom: 10px;
+        }
+
+        .edu-exp-content {
+            position: relative;
+        }
+
+        .edu-exp-section .edu-exp-item .date {
+            width: 30%;
+            font-weight: bold;
+            color: var(--main-color);
+        }
+
+        .edu-exp-section .edu-exp-item .edu-exp-item-content {
+            width: 70%;
+            text-align: justify;
+        }
+
+        .edu-exp-section .edu-exp-item .date {
+            display: flex;
+            position: relative;
+        }
+
+        .edu-exp-content .time-line {
+            position: absolute;
+            height: 100%;
+            width: 12px;
+            left: 0;
+            top: 6px;
+        }
+
+        .edu-exp-content .edu-exp-item {
+            position: relative;
+        }
+
+        .edu-exp-content .edu-exp-item:last-child .time-line {
+            display: none;
+        }
+
+        .edu-exp-content .time-line .time-line-border {
+            position: absolute;
+            height: 100%;
+            width: 30%;
+            left: 40%;
+            top: 0;
+            background: var(--main-color) !important;
+            -webkit-print-color-adjust: exact;
+        }
+
+        .edu-exp-section .edu-exp-item .date .cercle {
+            height: 12px;
+            width: 12px;
+            background: var(--main-color) !important;
+            border-radius: 100%;
+            -webkit-print-color-adjust: exact;
+            margin-right: 20px;
+        }
+
+        .edu-exp-section .edu-exp-item .edu-exp-item-title {
+            font-weight: bold;
+        }
+
+        .edu-exp-section .edu-exp-item .edu-exp-item-place {
+            color: gray;
+        }
+
+        .settings {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border: solid #d5d5d5;
+            border-width: 0 1px 1px 0;
+            border-radius: 0 0 5px 0;
+            box-shadow: -3px -3px 10px 0px #00000080;
+            position: fixed;
+            background: white;
+            z-index: 99;
+        }
+
+        .settings .setting-item {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .settings .settings-color-item {
+            background: black;
+            height: 15px;
+            width: 15px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .print-button {
+            background: black;
+            color: white;
+            border-style: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+
+        @media print {
+
+            .footer,
+            #non-printable {
+                display: none !important;
+            }
+
+            #printable {
+                display: block;
+            }
+
+            @page {
+                size: A4;
+                /* auto is default portrait; */
+                /* margin: 8% 5%; */
+            }
+
+            #resume {
+                font-family: 'Almarai', sans-serif;
+                display: flex;
+                justify-content: space-between;
+                size: 21cm 29.7cm;
+                margin: auto;
+            }
+
+            .settings {
+                display: none !important;
+            }
+
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js"
+        integrity="sha512-w3u9q/DeneCSwUDjhiMNibTRh/1i/gScBVp2imNVAMCt6cUHIw6xzhzcPFIaL3Q1EbI2l+nu17q2aLJJLo4ZYg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+</head>
+
+<body>
+    <div id="resume">
+        <div class="settings">
+            <div class="setting-item setting-color">
+                color :
+                <div class="settings-color-item" style="background-color: rgb(107, 98, 231);"
+                    @click="changeColor('rgb(107, 98, 231)')"></div>
+                <div class="settings-color-item" style="background-color: rgb(246, 51, 51);"
+                    @click="changeColor('rgb(246, 51, 51)')"></div>
+                <div class="settings-color-item" style="background-color: rgb(33, 173, 28);"
+                    @click="changeColor('rgb(33, 173, 28)')"></div>
+                <div class="settings-color-item" style="background-color: rgb(255, 217, 0);"
+                    @click="changeColor('rgb(255, 217, 0)')"></div>
+                <div class="settings-color-item" style="background-color: rgb(108, 36, 117);"
+                    @click="changeColor('rgb(108, 36, 117)')"></div>
+                <div class="settings-color-item" style="background-color: rgb(0, 0, 0);"
+                    @click="changeColor('rgb(0, 0, 0)')"></div>
+            </div>
+            |
+            <div class="setting-item">
+                <button class="print-button" onclick="print()">print</button>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="border"></div>
+            <section class="info-section">
+                <div class="title">
+                    INFO
+                </div>
+                <div class="section-content">
+                    <span class="info-title">Residence</span>
+                    <div class="info-content">
+                        <p>Morocco, Berrechid</p>
+                    </div>
+                    <span class="info-title">Nationality</span>
+                    <div class="info-content">
+                        <p>Morocco</p>
+                    </div>
+                    <span class="info-title">Birthdate</span>
+                    <div class="info-content">
+                        <p>1998/10/14</p>
+                    </div>
+                    <span class="info-title">Gender</span>
+                    <div class="info-content">
+                        <p>Male</p>
+                    </div>
+                    <span class="info-title">Phone</span>
+                    <div class="info-content">
+                        <p>{{ phone }}</p>
+                    </div>
+                    <span class="info-title">Email</span>
+                    <div class="info-content">
+                        <p>{{ email }}</p>
+                    </div>
+                </div>
+            </section>
+            <section class="skills-section">
+                <div class="title">
+                    SKILLS
+                </div>
+                <div class="section-content">
+                    <div class="skill" v-for="skill in resume.skills">
+                        <span class="skill-title">{{ skill.name }}</span>
+                        <div class="skill-content">
+                            <div class="subskill" v-for="sskill in skill.subskills">
+                                <div class="subskill-name">{{ sskill.name }}</div>
+                                <div class="subskill-rating">
+                                    <div v-for="a in sskill.level"></div>
+                                    <div style="background: gray !important;" v-for="b in (5-sskill.level)"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="content">
+            <div class="resume-head">
+                <span class="lastname">{{ lastname }}</span><br>
+                <span class="firstname">{{ firstname }}</span><br>
+                <span class="profession">{{ job }}</span>
+            </div>
+            <section>
+                <div class="title">PROFILE</div>
+                <div class="profile-content">
+                    <p>
+                        {{ aboutme }}
+                    </p>
+                </div>
+            </section>
+            <section class="edu-exp-section">
+                <div class="title">
+                    EDUCATION
+                </div>
+                <div class="edu-exp-content">
+
+                    <div class="edu-exp-item" v-for="edu in education">
+                        <div class="time-line">
+                            <div class="time-line-border"></div>
+                        </div>
+                        <div class="date">
+                            <div class="cercle"></div>
+                            <span>{{ edu.date }}</span>
+                        </div>
+                        <div class="edu-exp-item-content">
+                            <span class="edu-exp-item-title">
+                                {{ edu.title }}
+                            </span>
+                            <br>
+                            <span class="edu-exp-item-place">
+                                {{ edu.place.name }}
+                            </span>
+                            <br>
+                            <p>
+                                {{ edu.content }}
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <div style="clear: both;page-break-after: always;"></div>
+            <section class="edu-exp-section">
+                <div class="title">
+                    EXPERIENCE
+                </div>
+                <div class="edu-exp-content">
+                    <div class="edu-exp-item" :style="exp.style" v-for="exp in experience">
+                        <div class="time-line">
+                            <div class="time-line-border"></div>
+                        </div>
+                        <div class="date">
+                            <div class="cercle"></div>
+                            <span>{{ exp.date }}</span>
+                        </div>
+                        <div class="edu-exp-item-content">
+                            <span class="edu-exp-item-title">
+                                {{ exp.title }}
+                            </span>
+                            <br>
+                            <span class="edu-exp-item-place">
+                                {{ exp.place.name }}
+                            </span>
+                            <br>
+                            <p >
+                                {{ exp.content }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script>
+        (async () => {
+            const data = (await axios.get("/db.json")).data;
+
+            var app = new Vue({
+                el: '#resume',
+                data: {
+                    ...data
+                },
+                mounted() {
+                    console.log(data);
+                    // window.print();
+                },
+                methods: {
+                    changeColor(color) {
+                        document.documentElement.style.setProperty('--main-color', color);
+                    }
+                },
+            });
+
+        })();
+    </script>
+</body>
+
+</html>

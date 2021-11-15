@@ -2499,3 +2499,7 @@ body.mobile .animated {
 	margin-bottom: 10px;
 	color: #000;
  }
+
+ .section-loader{
+	 display: none!important;
+ }

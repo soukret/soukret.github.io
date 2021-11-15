@@ -19,7 +19,7 @@
     <link rel="manifest" href="/assets/site.webmanifest">
 
     <!-- Google Font-->
-    <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <!-- Font Awesome -->
     <!-- <link rel="stylesheet" href="assets/icons/font-awesome-4.7.0/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -195,8 +195,13 @@
                                             }}</span></li>
                                 </ul>
                             </div>
+                            <a href="/resume.html" target="_blank" class="btn btn-fill wow fadeInUp "
+                                data-wow-duration="0.8s" data-wow-delay="0.4s">Print/Save CV <i
+                                    class="fa fa-print"></i></a>
+                            <br>
                             <a :href="cv" target="_blank" class="btn btn-fill wow fadeInUp" data-wow-duration="0.8s"
                                 data-wow-delay="0.4s">Downlaod CV <i class="fa fa-download"></i></a>
+
                         </div>
                     </div>
                 </div>
@@ -264,12 +269,27 @@
                     <div class="col-sm-12 col-md-6">
                         <div class="mh-professional-skills wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
                             <h3>Professional Skills</h3>
-                            <ul class="mh-professional-progress">
-                                <li class="candidatos" v-for="(sp,i) in skills.profes" :key="'sp_'+i">
-                                    <div class="mh-progress mh-progress-circle" :data-progress="sp.rate"></div>
-                                    <div class="pr-skill-name">{{ sp.name }}</div>
-                                </li>
-                            </ul>
+                            <template v-if="false">
+
+                                <ul class="mh-professional-progress">
+                                    <li class="candidatos" v-for="(sp,i) in skills.profes" :key="'sp_'+i">
+                                        <div class="mh-progress mh-progress-circle" :data-progress="sp.rate"></div>
+                                        <div class="pr-skill-name">{{ sp.name }}</div>
+                                    </li>
+                                </ul>
+
+                            </template>
+                            <template v-else>
+
+                                <ul class="mh-professional-progress">
+                                    <li class="candidatos" v-for="(sp,i) in skills.profes" :key="'sp_'+i">
+                                        <div class="mh-progress mh-progress-circle" :data-progress="sp.rate"></div>
+                                        <div class="pr-skill-name">{{ sp.name }}</div>
+                                    </li>
+                                </ul>
+
+                            </template>
+                            
                         </div>
                     </div>
                 </div>
@@ -310,7 +330,7 @@
                                     <!-- Experience Institutes-->
                                     <div v-for="(exp,i) in experience" :key="'exp_'+i"
                                         class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s"
-                                        data-wow-delay="0.4s">
+                                        :class="exp.hideinweb?'d-none':''" data-wow-delay="0.4s">
                                         <h4>{{exp.title}} <a :href="exp.place.link">{{ exp.place.name }}</a></h4>
                                         <div class="mh-eduyear">{{ exp.date }}</div>
                                         <p>
@@ -829,16 +849,7 @@
             </div>
         </footer>
 
-        <script>
-            (async ()=>{
-                const data = (await axios.get("/db.json")).data;
-    
-                var app = new Vue({
-                    el: '#app',
-                    data
-                })
-            })();
-        </script>
+
         <!--
     ==============
     * JS Files *
@@ -872,6 +883,20 @@
         <script src="assets/plugins/js/packery-mode.pkgd.js"></script>
         <script src="assets/js/custom-scripts.js"></script>
 
+
+        <script>
+            (async () => {
+                const data = (await axios.get("/db.json")).data;
+
+                var app = new Vue({
+                    el: '#app',
+                    data,
+                    mounted() {
+                        console.log(this);
+                    },
+                })
+            })();
+        </script>
 
         <!-- ****************
       After neccessary customization/modification, Please minify 
