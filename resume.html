@@ -257,11 +257,11 @@
             background: red;
         }
 
-        *:hover>.hide-btn {
+        *:hover> .hide-btn {
             background: rgb(38, 0, 255);
         }
 
-        *:hover>.add-btn {
+        *:hover> div > .add-btn {
             background: rgb(0, 255, 34);
         }
 
@@ -392,34 +392,10 @@
                     <div class="title">
                         INFO
                     </div>
-                    <div class="section-content">
-                        <span class="info-title">Residence</span>
+                    <div class="section-content" v-for="inf in resume.info" >
+                        <span class="info-title">{{ inf.name }}</span>
                         <div class="info-content">
-                            <p>Morocco, Berrechid</p>
-                        </div>
-                        <span class="info-title">Nationality</span>
-                        <div class="info-content">
-                            <p>Morocco</p>
-                        </div>
-                        <span class="info-title">Birthdate</span>
-                        <div class="info-content">
-                            <p>1998/10/14</p>
-                        </div>
-                        <span class="info-title">Gender</span>
-                        <div class="info-content">
-                            <p>Male</p>
-                        </div>
-                        <span class="info-title">Phone</span>
-                        <div class="info-content">
-                            <p>{{ phone }}</p>
-                        </div>
-                        <span class="info-title">Email</span>
-                        <div class="info-content">
-                            <p>{{ email }}</p>
-                        </div>
-                        <span class="info-title">Website</span>
-                        <div class="info-content">
-                            <p>www.zadelkhair.me</p>
+                            <p>{{ inf.value }}</p>
                         </div>
                     </div>
                 </section>
@@ -458,7 +434,7 @@
                                             @click="sskill.level=i+sskill.level+1"></div>
                                     </div>
                                 </div>
-                                <div class="subskill hideinprint">
+                                <div class="subskill hideinprint" style="height: 20px;" >
                                     <button class="add-btn" @click="skill.subskills.push(
                                             {
                                                 'name': '____',
@@ -502,6 +478,7 @@
                 <section>
 
                     <button class="hide-btn"
+                        style="height: 20px;"
                         @click="(e)=>{ console.log(e.target.parentElement.classList.add('hide-section')); }">
                         hide
                     </button>

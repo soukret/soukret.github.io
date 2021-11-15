@@ -271,6 +271,36 @@
         }
     ],
     "resume": {
+        "info" : [
+            {
+                "name" : "Residence",
+                "value" : "Morocco, Berrechid"
+            },
+            {
+                "name" : "Nationality",
+                "value" : "Morocco"
+            },
+            {
+                "name" : "Birthdate",
+                "value" : "1998/10/14"
+            },
+            {
+                "name" : "Gender",
+                "value" : "Male"
+            },
+            {
+                "name" : "Phone",
+                "value" : "abdo.zad.raja2@gmail.com"
+            },
+            {
+                "name" : "Email",
+                "value" : "+212680096104"
+            },
+            {
+                "name" : "Website",
+                "value" : "www.zadelkhair.me"
+            }
+        ],
         "skills": [
             {
                 "name": "BACKEND",
