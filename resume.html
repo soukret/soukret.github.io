@@ -244,24 +244,24 @@
             cursor: pointer;
         }
 
-        .delete-btn{
+        .delete-btn {
             background: rgba(255, 0, 0, 0.157);
         }
-        
-        .add-btn{
+
+        .add-btn {
             background: rgba(0, 255, 34, 0.157);
             margin: auto;
         }
 
-        *:hover > .delete-btn {
+        *:hover>.delete-btn {
             background: red;
         }
 
-        *:hover > .hide-btn {
+        *:hover>.hide-btn {
             background: rgb(38, 0, 255);
         }
 
-        *:hover > .add-btn {
+        *:hover>.add-btn {
             background: rgb(0, 255, 34);
         }
 
@@ -270,14 +270,14 @@
             cursor: pointer;
         }
 
-        .hide-section{
+        .hide-section {
             height: 100px;
             overflow: hidden;
             position: relative;
             opacity: .3;
         }
 
-        .hide-section > .hide-background{
+        .hide-section>.hide-background {
             background: black;
             display: block;
             position: absolute;
@@ -323,20 +323,22 @@
                 display: none !important;
             }
 
-            .delete-btn,.hide-btn,.add-btn {
+            .delete-btn,
+            .hide-btn,
+            .add-btn {
                 display: none !important;
             }
 
-            .hide-section{
-                display: none!important;
+            .hide-section {
+                display: none !important;
             }
 
-            .hide-background{
-                display: none!important;
+            .hide-background {
+                display: none !important;
             }
 
-            .hideinprint{
-                display: none!important;
+            .hideinprint {
+                display: none !important;
             }
 
         }
@@ -346,11 +348,10 @@
         integrity="sha512-w3u9q/DeneCSwUDjhiMNibTRh/1i/gScBVp2imNVAMCt6cUHIw6xzhzcPFIaL3Q1EbI2l+nu17q2aLJJLo4ZYg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-
 </head>
 
 <body>
-    <div id="app" >
+    <div id="app">
         <div class="settings">
             <div class="setting-item setting-color">
                 color :
@@ -372,207 +373,248 @@
                 <button class="print-button" onclick="print()">print</button>
             </div>
         </div>
-        
-    <div id="resume" contenteditable>
-        
-        <div class="sidebar">
-            <div class="border"></div>
-            <section class="info-section">
-                
-                <button class="hide-btn" @click="(e)=>{ console.log(e.target.parentElement.classList.add('hide-section')); }" >
-                    hide
-                </button>
 
-                <div class="hide-background" @click="(e)=>{ console.log(e.target.parentElement.classList.remove('hide-section')) }">
-                </div>
+        <div id="resume" contenteditable>
 
-                <div class="title">
-                    INFO
-                </div>
-                <div class="section-content">
-                    <span class="info-title">Residence</span>
-                    <div class="info-content">
-                        <p>Morocco, Berrechid</p>
-                    </div>
-                    <span class="info-title">Nationality</span>
-                    <div class="info-content">
-                        <p>Morocco</p>
-                    </div>
-                    <span class="info-title">Birthdate</span>
-                    <div class="info-content">
-                        <p>1998/10/14</p>
-                    </div>
-                    <span class="info-title">Gender</span>
-                    <div class="info-content">
-                        <p>Male</p>
-                    </div>
-                    <span class="info-title">Phone</span>
-                    <div class="info-content">
-                        <p>{{ phone }}</p>
-                    </div>
-                    <span class="info-title">Email</span>
-                    <div class="info-content">
-                        <p>{{ email }}</p>
-                    </div>
-                    <span class="info-title">Website</span>
-                    <div class="info-content">
-                        <p>www.zadelkhair.me</p>
-                    </div>
-                </div>
-            </section>
-            <section class="skills-section">
-                
-                <button class="hide-btn" @click="(e)=>{ console.log(e.target.parentElement.classList.add('hide-section')); }" >
-                    hide
-                </button>
+            <div class="sidebar">
+                <div class="border"></div>
+                <section class="info-section">
 
-                <div class="hide-background" @click="(e)=>{ console.log(e.target.parentElement.classList.remove('hide-section')) }">
-                </div>
+                    <button class="hide-btn"
+                        @click="(e)=>{ console.log(e.target.parentElement.classList.add('hide-section')); }">
+                        hide
+                    </button>
 
-                <div class="title">
-                    SKILLS
-                </div>
-                <div class="section-content">
-                    <div class="skill" v-for="(skill,i) in resume.skills">
+                    <div class="hide-background"
+                        @click="(e)=>{ console.log(e.target.parentElement.classList.remove('hide-section')) }">
+                    </div>
 
-                        <button class="delete-btn" @click="resume.skills.splice(i, 1);" >
-                            delete
-                        </button>
+                    <div class="title">
+                        INFO
+                    </div>
+                    <div class="section-content">
+                        <span class="info-title">Residence</span>
+                        <div class="info-content">
+                            <p>Morocco, Berrechid</p>
+                        </div>
+                        <span class="info-title">Nationality</span>
+                        <div class="info-content">
+                            <p>Morocco</p>
+                        </div>
+                        <span class="info-title">Birthdate</span>
+                        <div class="info-content">
+                            <p>1998/10/14</p>
+                        </div>
+                        <span class="info-title">Gender</span>
+                        <div class="info-content">
+                            <p>Male</p>
+                        </div>
+                        <span class="info-title">Phone</span>
+                        <div class="info-content">
+                            <p>{{ phone }}</p>
+                        </div>
+                        <span class="info-title">Email</span>
+                        <div class="info-content">
+                            <p>{{ email }}</p>
+                        </div>
+                        <span class="info-title">Website</span>
+                        <div class="info-content">
+                            <p>www.zadelkhair.me</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="skills-section">
 
-                        <span class="skill-title">{{ skill.name }}</span>
-                        <div class="skill-content">
-                            <div class="subskill" v-for="(sskill,i) in skill.subskills">
-                                <div class="subskill-name">{{ sskill.name }}</div>
-                                <button style="position: relative;margin-left: 30px;" class="delete-btn" @click="skill.subskills.splice(i, 1);" >
-                                    delete
-                                </button>
-                                <div class="subskill-rating">
-                                    <div v-for="(a,i) in sskill.level" @click="sskill.level=i+1"></div>
-                                    <div style="background: gray !important;" v-for="(b,i) in (5-sskill.level)" @click="sskill.level=i+sskill.level+1"></div>
+                    <button class="hide-btn"
+                        @click="(e)=>{ console.log(e.target.parentElement.classList.add('hide-section')); }">
+                        hide
+                    </button>
+
+                    <div class="hide-background"
+                        @click="(e)=>{ console.log(e.target.parentElement.classList.remove('hide-section')) }">
+                    </div>
+
+                    <div class="title">
+                        SKILLS
+                    </div>
+                    <div class="section-content">
+                        <div class="skill" v-for="(skill,i) in resume.skills">
+
+                            <button class="delete-btn" @click="resume.skills.splice(i, 1);">
+                                delete
+                            </button>
+
+                            <span class="skill-title">{{ skill.name }}</span>
+                            <div class="skill-content">
+                                <div class="subskill" v-for="(sskill,i) in skill.subskills">
+                                    <div class="subskill-name">{{ sskill.name }}</div>
+                                    <button style="position: relative;margin-left: 30px;" class="delete-btn"
+                                        @click="skill.subskills.splice(i, 1);">
+                                        delete
+                                    </button>
+                                    <div class="subskill-rating">
+                                        <div v-for="(a,i) in sskill.level" @click="sskill.level=i+1"></div>
+                                        <div style="background: gray !important;" v-for="(b,i) in (5-sskill.level)"
+                                            @click="sskill.level=i+sskill.level+1"></div>
+                                    </div>
+                                </div>
+                                <div class="subskill hideinprint">
+                                    <button class="add-btn" @click="skill.subskills.push(
+                                            {
+                                                'name': '____',
+                                                'level': 3
+                                            }
+                                )">add</button>
                                 </div>
                             </div>
                         </div>
+                        <div class="skill hideinprint">
+                            <button class="add-btn" @click="resume.skills.push(
+                            {
+                                'name': '____',
+                                'subskills': [
+                                    {
+                                        'name': '____',
+                                        'level': 3
+                                    }
+                                ]
+                            }
+                        )">add</button>
+                        </div>
                     </div>
-                </div>
-            </section>
-        </div>
-        <div class="content">
-            <div class="resume-head">
-                <button class="hide-btn" @click="(e)=>{ console.log(e.target.parentElement.classList.add('hide-section')); }" >
-                    hide
-                </button>
-
-                <div class="hide-background" @click="(e)=>{ console.log(e.target.parentElement.classList.remove('hide-section')) }">
-                </div>
-
-                <span class="lastname">{{ lastname }}</span><br>
-                <span class="firstname">{{ firstname }}</span><br>
-                <span class="profession">{{ job }}</span>
+                </section>
             </div>
-            <section>
+            <div class="content">
+                <div class="resume-head">
+                    <button class="hide-btn"
+                        @click="(e)=>{ console.log(e.target.parentElement.classList.add('hide-section')); }">
+                        hide
+                    </button>
 
-                <button class="hide-btn" @click="(e)=>{ console.log(e.target.parentElement.classList.add('hide-section')); }" >
-                    hide
-                </button>
-
-                <div class="hide-background" @click="(e)=>{ console.log(e.target.parentElement.classList.remove('hide-section')) }">
-                </div>
-
-                <div class="title">PROFILE</div>
-                <div class="profile-content">
-                    <p>
-                        {{ aboutme }}
-                    </p>
-                </div>
-            </section>
-            <section class="edu-exp-section">
-
-                <button class="hide-btn" @click="(e)=>{ console.log(e.target.parentElement.classList.add('hide-section')); }" >
-                    hide
-                </button>
-
-                <div class="hide-background" @click="(e)=>{ console.log(e.target.parentElement.classList.remove('hide-section')) }">
-                </div>
-
-                <div class="title">
-                    EDUCATION
-                </div>
-                <div class="edu-exp-content">
-
-                    <div class="edu-exp-item" v-for="(edu,i) in education">
-                        <button class="delete-btn" @click="education.splice(i, 1);" >
-                            delete
-                        </button>
-                        <div class="time-line">
-                            <div class="time-line-border"></div>
-                        </div>
-                        
-                        <div class="date">
-                            <div class="cercle"></div>
-                            <span>{{ edu.date }}</span>
-                        </div>
-                        <div class="edu-exp-item-content">
-                            <span class="edu-exp-item-title">
-                                {{ edu.title }}
-                            </span>
-                            <br>
-                            <span class="edu-exp-item-place">
-                                {{ edu.place.name }}
-                            </span>
-                            <br>
-                            <p>
-                                {{ edu.content }}
-                            </p>
-                        </div>
-                    </div>
-                    <div class="edu-exp-item hideinprint">
-                        <button class="add-btn" >add</button>
+                    <div class="hide-background"
+                        @click="(e)=>{ console.log(e.target.parentElement.classList.remove('hide-section')) }">
                     </div>
 
+                    <span class="lastname">{{ lastname }}</span><br>
+                    <span class="firstname">{{ firstname }}</span><br>
+                    <span class="profession">{{ job }}</span>
                 </div>
-            </section>
-            <section class="edu-exp-section">
-                
-                <button class="hide-btn" @click="(e)=>{ console.log(e.target.parentElement.classList.add('hide-section')); }" >
-                    hide
-                </button>
+                <section>
 
-                <div class="hide-background" @click="(e)=>{ console.log(e.target.parentElement.classList.remove('hide-section')) }">
-                </div>
+                    <button class="hide-btn"
+                        @click="(e)=>{ console.log(e.target.parentElement.classList.add('hide-section')); }">
+                        hide
+                    </button>
 
-                <div class="title">
-                    EXPERIENCE
-                </div>
-                <div class="edu-exp-content">
-                    <div class="edu-exp-item" :style="exp.style" v-for="(exp,i) in experience">
-                        <button class="delete-btn" @click="experience.splice(i, 1);" >
-                            delete
-                        </button>
-                        <div class="time-line">
-                            <div class="time-line-border"></div>
+                    <div class="hide-background"
+                        @click="(e)=>{ console.log(e.target.parentElement.classList.remove('hide-section')) }">
+                    </div>
+
+                    <div class="title">PROFILE</div>
+                    <div class="profile-content">
+                        <p>
+                            {{ aboutme }}
+                        </p>
+                    </div>
+                </section>
+                <section class="edu-exp-section">
+
+                    <button class="hide-btn"
+                        @click="(e)=>{ console.log(e.target.parentElement.classList.add('hide-section')); }">
+                        hide
+                    </button>
+
+                    <div class="hide-background"
+                        @click="(e)=>{ console.log(e.target.parentElement.classList.remove('hide-section')) }">
+                    </div>
+
+                    <div class="title">
+                        EDUCATION
+                    </div>
+                    <div class="edu-exp-content">
+
+                        <div class="edu-exp-item" v-for="(edu,i) in education">
+                            <button class="delete-btn" @click="education.splice(i, 1);">
+                                delete
+                            </button>
+                            <div class="time-line" v-if="i+1 != education.length">
+                                <div class="time-line-border"></div>
+                            </div>
+
+                            <div class="date">
+                                <div class="cercle"></div>
+                                <span>{{ edu.date }}</span>
+                            </div>
+                            <div class="edu-exp-item-content">
+                                <span class="edu-exp-item-title">
+                                    {{ edu.title }}
+                                </span>
+                                <br>
+                                <span class="edu-exp-item-place">
+                                    {{ edu.place.name }}
+                                </span>
+                                <br>
+                                <p>
+                                    {{ edu.content }}
+                                </p>
+                            </div>
                         </div>
-                        <div class="date">
-                            <div class="cercle"></div>
-                            <span>{{ exp.date }}</span>
+                        <div class="edu-exp-item hideinprint">
+                            <button class="add-btn"
+                                @click="education.push({ title: '____', place: { name: '____', link: '#' }, date: '____', details: '____', content: '____' })">add</button>
                         </div>
-                        <div class="edu-exp-item-content">
-                            <span class="edu-exp-item-title">
-                                {{ exp.title }}
-                            </span>
-                            <br>
-                            <span class="edu-exp-item-place">
-                                {{ exp.place.name }}
-                            </span>
-                            <br>
-                            <p>
-                                {{ exp.content }}
-                            </p>
+
+                    </div>
+                </section>
+                <section class="edu-exp-section">
+
+                    <button class="hide-btn"
+                        @click="(e)=>{ console.log(e.target.parentElement.classList.add('hide-section')); }">
+                        hide
+                    </button>
+
+                    <div class="hide-background"
+                        @click="(e)=>{ console.log(e.target.parentElement.classList.remove('hide-section')) }">
+                    </div>
+
+                    <div class="title">
+                        EXPERIENCE
+                    </div>
+                    <div class="edu-exp-content">
+                        <div class="edu-exp-item" :style="exp.style" v-for="(exp,i) in experience">
+                            <button class="delete-btn" @click="experience.splice(i, 1);">
+                                delete
+                            </button>
+                            <div class="time-line" v-if="i+1 != experience.length">
+                                <div class="time-line-border"></div>
+                            </div>
+                            <div class="date">
+                                <div class="cercle"></div>
+                                <span>{{ exp.date }}</span>
+                            </div>
+                            <div class="edu-exp-item-content">
+                                <span class="edu-exp-item-title">
+                                    {{ exp.title }}
+                                </span>
+                                <br>
+                                <span class="edu-exp-item-place">
+                                    {{ exp.place.name }}
+                                </span>
+                                <br>
+                                <p>
+                                    {{ exp.content }}
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="edu-exp-item hideinprint">
+                            <button class="add-btn"
+                                @click="experience.push({ title: '____', place: { name: '____', link: '#' }, date: '____', details: '____', content: '____' })">add</button>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
         </div>
-    </div>
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
