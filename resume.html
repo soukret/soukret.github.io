@@ -230,6 +230,7 @@
             cursor: pointer;
         }
 
+        .add-btn,
         .delete-btn,
         .hide-btn {
             border-radius: 5px;
@@ -246,6 +247,11 @@
         .delete-btn{
             background: rgba(255, 0, 0, 0.157);
         }
+        
+        .add-btn{
+            background: rgba(0, 255, 34, 0.157);
+            margin: auto;
+        }
 
         *:hover > .delete-btn {
             background: red;
@@ -253,6 +259,10 @@
 
         *:hover > .hide-btn {
             background: rgb(38, 0, 255);
+        }
+
+        *:hover > .add-btn {
+            background: rgb(0, 255, 34);
         }
 
         .hide-background {
@@ -313,7 +323,7 @@
                 display: none !important;
             }
 
-            .delete-btn,.hide-btn {
+            .delete-btn,.hide-btn,.add-btn {
                 display: none !important;
             }
 
@@ -322,6 +332,10 @@
             }
 
             .hide-background{
+                display: none!important;
+            }
+
+            .hideinprint{
                 display: none!important;
             }
 
@@ -336,28 +350,29 @@
 </head>
 
 <body>
-    <div id="resume" contenteditable>
-        <div class="settings">
-            <div class="setting-item setting-color">
-                color :
-                <div class="settings-color-item" style="background-color: rgb(107, 98, 231);"
-                    @click="changeColor('rgb(107, 98, 231)')"></div>
-                <div class="settings-color-item" style="background-color: rgb(246, 51, 51);"
-                    @click="changeColor('rgb(246, 51, 51)')"></div>
-                <div class="settings-color-item" style="background-color: rgb(33, 173, 28);"
-                    @click="changeColor('rgb(33, 173, 28)')"></div>
-                <div class="settings-color-item" style="background-color: rgb(255, 217, 0);"
-                    @click="changeColor('rgb(255, 217, 0)')"></div>
-                <div class="settings-color-item" style="background-color: rgb(108, 36, 117);"
-                    @click="changeColor('rgb(108, 36, 117)')"></div>
-                <div class="settings-color-item" style="background-color: rgb(0, 0, 0);"
-                    @click="changeColor('rgb(0, 0, 0)')"></div>
-            </div>
-            |
-            <div class="setting-item">
-                <button class="print-button" onclick="print()">print</button>
-            </div>
+    <div class="settings">
+        <div class="setting-item setting-color">
+            color :
+            <div class="settings-color-item" style="background-color: rgb(107, 98, 231);"
+                @click="changeColor('rgb(107, 98, 231)')"></div>
+            <div class="settings-color-item" style="background-color: rgb(246, 51, 51);"
+                @click="changeColor('rgb(246, 51, 51)')"></div>
+            <div class="settings-color-item" style="background-color: rgb(33, 173, 28);"
+                @click="changeColor('rgb(33, 173, 28)')"></div>
+            <div class="settings-color-item" style="background-color: rgb(255, 217, 0);"
+                @click="changeColor('rgb(255, 217, 0)')"></div>
+            <div class="settings-color-item" style="background-color: rgb(108, 36, 117);"
+                @click="changeColor('rgb(108, 36, 117)')"></div>
+            <div class="settings-color-item" style="background-color: rgb(0, 0, 0);"
+                @click="changeColor('rgb(0, 0, 0)')"></div>
         </div>
+        |
+        <div class="setting-item">
+            <button class="print-button" onclick="print()">print</button>
+        </div>
+    </div>
+    <div id="resume" contenteditable>
+        
         <div class="sidebar">
             <div class="border"></div>
             <section class="info-section">
@@ -489,6 +504,7 @@
                         <div class="time-line">
                             <div class="time-line-border"></div>
                         </div>
+                        
                         <div class="date">
                             <div class="cercle"></div>
                             <span>{{ edu.date }}</span>
@@ -506,6 +522,9 @@
                                 {{ edu.content }}
                             </p>
                         </div>
+                    </div>
+                    <div class="edu-exp-item hideinprint">
+                        <button class="add-btn" >add</button>
                     </div>
 
                 </div>
