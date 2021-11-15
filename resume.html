@@ -350,27 +350,29 @@
 </head>
 
 <body>
-    <div class="settings">
-        <div class="setting-item setting-color">
-            color :
-            <div class="settings-color-item" style="background-color: rgb(107, 98, 231);"
-                @click="changeColor('rgb(107, 98, 231)')"></div>
-            <div class="settings-color-item" style="background-color: rgb(246, 51, 51);"
-                @click="changeColor('rgb(246, 51, 51)')"></div>
-            <div class="settings-color-item" style="background-color: rgb(33, 173, 28);"
-                @click="changeColor('rgb(33, 173, 28)')"></div>
-            <div class="settings-color-item" style="background-color: rgb(255, 217, 0);"
-                @click="changeColor('rgb(255, 217, 0)')"></div>
-            <div class="settings-color-item" style="background-color: rgb(108, 36, 117);"
-                @click="changeColor('rgb(108, 36, 117)')"></div>
-            <div class="settings-color-item" style="background-color: rgb(0, 0, 0);"
-                @click="changeColor('rgb(0, 0, 0)')"></div>
+    <div id="app" >
+        <div class="settings">
+            <div class="setting-item setting-color">
+                color :
+                <div class="settings-color-item" style="background-color: rgb(107, 98, 231);"
+                    @click="changeColor('rgb(107, 98, 231)')"></div>
+                <div class="settings-color-item" style="background-color: rgb(246, 51, 51);"
+                    @click="changeColor('rgb(246, 51, 51)')"></div>
+                <div class="settings-color-item" style="background-color: rgb(33, 173, 28);"
+                    @click="changeColor('rgb(33, 173, 28)')"></div>
+                <div class="settings-color-item" style="background-color: rgb(255, 217, 0);"
+                    @click="changeColor('rgb(255, 217, 0)')"></div>
+                <div class="settings-color-item" style="background-color: rgb(108, 36, 117);"
+                    @click="changeColor('rgb(108, 36, 117)')"></div>
+                <div class="settings-color-item" style="background-color: rgb(0, 0, 0);"
+                    @click="changeColor('rgb(0, 0, 0)')"></div>
+            </div>
+            |
+            <div class="setting-item">
+                <button class="print-button" onclick="print()">print</button>
+            </div>
         </div>
-        |
-        <div class="setting-item">
-            <button class="print-button" onclick="print()">print</button>
-        </div>
-    </div>
+        
     <div id="resume" contenteditable>
         
         <div class="sidebar">
@@ -571,6 +573,7 @@
             </section>
         </div>
     </div>
+    </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
     <script>
@@ -578,7 +581,7 @@
             const data = (await axios.get("/db.json")).data;
 
             var app = new Vue({
-                el: '#resume',
+                el: '#app',
                 data: {
                     ...data
                 },
