@@ -392,11 +392,17 @@
                     <div class="title">
                         INFO
                     </div>
-                    <div class="section-content" v-for="inf in resume.info" >
+                    <div class="section-content" v-for="(inf,i) in resume.info" >
+                        <button class="delete-btn" @click="resume.info.splice(i, 1);">
+                            delete
+                        </button>
                         <span class="info-title">{{ inf.name }}</span>
                         <div class="info-content">
                             <p>{{ inf.value }}</p>
                         </div>
+                    </div>
+                    <div class="section-content hideinprint" style="height: 20px;" >
+                        <button class="add-btn" @click="resume.info.push({'name': '____','value': '____'})">add</button>
                     </div>
                 </section>
                 <section class="skills-section">
