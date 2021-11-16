@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;700&display=swap');
+
+        :root {
+            --main-color: rgb(108, 36, 117);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+        }
+
+        #resume {
+            font-family: 'Almarai', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            size: 21cm 29.7cm;
+            margin: 30mm 45mm 30mm 45mm;
+            /* change the margins as you want them to be. */
+        }
+
+        /**/
+        .cv-head{
+            display: flex;
+        }
+
+        /**/
+
+        
+        .settings {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border: solid #d5d5d5;
+            border-width: 0 1px 1px 0;
+            border-radius: 0 0 5px 0;
+            box-shadow: -3px -3px 10px 0px #00000080;
+            position: fixed;
+            background: white;
+            z-index: 99;
+        }
+
+        .settings .setting-item {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+        }
+
+        .settings .settings-color-item {
+            background: black;
+            height: 15px;
+            width: 15px;
+            margin-left: 10px;
+            cursor: pointer;
+            border-style: none;
+            border-width: none;
+        }
+
+        .site-button {
+            background: black;
+            color: white;
+            border-style: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-family: sans-serif;
+        }
+
+        .add-btn,
+        .delete-btn,
+        .hide-btn {
+            border-radius: 5px;
+            position: absolute;
+            right: 20px;
+            padding: 3px;
+            font-size: 10px;
+            border: none;
+            background: rgba(38, 0, 255, 0.157);
+            color: white;
+            cursor: pointer;
+        }
+
+        .delete-btn {
+            background: rgba(255, 0, 0, 0.157);
+        }
+
+        .add-btn {
+            background: rgba(0, 255, 34, 0.157);
+            margin: auto;
+        }
+
+        *:hover>.delete-btn {
+            background: red;
+        }
+
+        *:hover>.hide-btn {
+            background: rgb(38, 0, 255);
+        }
+
+        *:hover>div>.add-btn {
+            background: rgb(0, 255, 34);
+        }
+
+        .hide-background {
+            display: none;
+            cursor: pointer;
+        }
+
+        .hide-section {
+            height: 100px;
+            overflow: hidden;
+            position: relative;
+            opacity: .3;
+        }
+
+        .hide-section>.hide-background {
+            background: black;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 99;
+            opacity: .3;
+        }
+
+        @media print {
+
+
+            /*div,span,p,section,li,ul,img {
+                break-inside: avoid;
+            }*/
+
+            .footer,
+            #non-printable {
+                display: none !important;
+            }
+
+            #printable {
+                display: block;
+            }
+
+            @page {
+                size: A4;
+                /* auto is default portrait; */
+                /* margin: 8% 5%; */
+            }
+
+            #resume {
+                size: 21cm 29.7cm;
+                margin: auto;
+            }
+
+            .settings {
+                display: none !important;
+            }
+
+            .delete-btn,
+            .hide-btn,
+            .add-btn {
+                display: none !important;
+            }
+
+            .hide-section {
+                display: none !important;
+            }
+
+            .hide-background {
+                display: none !important;
+            }
+
+            .hideinprint {
+                display: none !important;
+            }
+
+        }
+
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js"
+        integrity="sha512-w3u9q/DeneCSwUDjhiMNibTRh/1i/gScBVp2imNVAMCt6cUHIw6xzhzcPFIaL3Q1EbI2l+nu17q2aLJJLo4ZYg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <div class="settings">
+            <div class="setting-item">
+                <button class="site-button" onclick="window.location = '/'">
+                    home
+                </button>
+            </div>
+            <div class="setting-item">
+                <button class="site-button" onclick="print()">print</button>
+            </div>
+            <div class="setting-item setting-color">
+                color :
+                <div class="settings-color-item" style="background-color: rgb(107, 98, 231);"
+                    @click="changeColor('rgb(107, 98, 231)')"></div>
+                <div class="settings-color-item" style="background-color: rgb(246, 51, 51);"
+                    @click="changeColor('rgb(246, 51, 51)')"></div>
+                <div class="settings-color-item" style="background-color: rgb(33, 173, 28);"
+                    @click="changeColor('rgb(33, 173, 28)')"></div>
+                <div class="settings-color-item" style="background-color: rgb(255, 217, 0);"
+                    @click="changeColor('rgb(255, 217, 0)')"></div>
+                <div class="settings-color-item" style="background-color: rgb(108, 36, 117);"
+                    @click="changeColor('rgb(108, 36, 117)')"></div>
+                <div class="settings-color-item" style="background-color: rgb(0, 0, 0);"
+                    @click="changeColor('rgb(0, 0, 0)')"></div>
+                <input class="settings-color-item" type="color" @change="changeColor($event.target.value)">
+            </div>
+        </div>
+
+        <div id="resume" >
+            <section class="cv-head">
+                <div class="info">
+                    <span class="firstname" >Abdelkoddous</span>
+                    <span class="lastname" >Zadelkhair</span>
+                    <span class="profession" >fullstack web developer</span>
+                </div>
+                <div class="contact">
+                    <span>phone</span>
+                    <span>5555555</span><br>
+                    <span>email</span>
+                    <span>abdo.zad.raja2@gmail.com</span><br>
+                    <span>lcation</span>
+                    <span>monterial</span><br>
+                </div>
+            </section>
+            <section class="obj-skills" >
+            </section>
+            <section class="edu-exp" >
+            </section>
+        </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script>
+        (async () => {
+            const data = (await axios.get("/db.json")).data;
+
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    ...data
+                },
+                mounted() {
+                    // window.print();
+
+                    //disable editing some elements
+                    [
+                        '.add-btn',
+                        '.delete-btn',
+                        '.hide-btn'
+                    ].forEach((cls) => {
+                        document.querySelectorAll(cls).forEach((elem) => {
+                            elem.setAttribute("contenteditable", "false");
+                        })
+                    });
+
+                },
+                methods: {
+                    changeColor(color) {
+                        document.documentElement.style.setProperty('--main-color', color);
+                    }
+                },
+            });
+
+        })();
+    </script>
+</body>
+
+</html>
