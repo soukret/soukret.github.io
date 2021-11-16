@@ -306,7 +306,7 @@
             opacity: .3;
         }
 
-        *:hover > .btns-up-down{
+        *:hover>.btns-up-down {
             opacity: 1;
         }
 
@@ -421,19 +421,19 @@
             </div>
         </div>
 
-        <div id="resume" contenteditable>
+        <div id="resume">
 
             <div class="sidebar">
                 <div class="border"></div>
                 <section class="info-section">
 
                     <button class="hide-btn"
-                        @click="(e)=>{ console.log(e.target.parentElement.classList.add('hide-section')); }">
+                        @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
                         hide
                     </button>
 
                     <div class="hide-background"
-                        @click="(e)=>{ console.log(e.target.parentElement.classList.remove('hide-section')) }">
+                        @click="(e)=>{ e.target.parentElement.classList.remove('hide-section') }">
                     </div>
 
                     <div class="title">
@@ -441,15 +441,17 @@
                     </div>
                     <div class="section-content" style="position: relative;" v-for="(inf,i) in resume.info">
                         <div class="btns-up-down hideinprint">
-                            <button class="btn-up" @click="moveItem(i,i-1,resume.info)"></button>
+                            <button class="btn-up" @click="moveItem(i,i-1,resume.info);"></button>
                             <button class="btn-down" @click="moveItem(i,i+1,resume.info)"></button>
                         </div>
-                        <button class="delete-btn" @click="resume.info.splice(i, 1);">
+                        <button class="delete-btn" @click="resume.info.splice(i, 1);changeEditableFlag();">
                             delete
                         </button>
-                        <span class="info-title">{{ inf.name }}</span>
+                        <span class="info-title">
+                            <p-editable :flag="editableflag" v-model="inf.name" />
+                        </span>
                         <div class="info-content">
-                            <p>{{ inf.value }}</p>
+                            <p-editable :flag="editableflag" v-model="inf.value" />
                         </div>
                     </div>
                     <div class="section-content hideinprint" style="height: 20px;">
@@ -459,12 +461,12 @@
                 <section class="skills-section">
 
                     <button class="hide-btn"
-                        @click="(e)=>{ console.log(e.target.parentElement.classList.add('hide-section')); }">
+                        @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
                         hide
                     </button>
 
                     <div class="hide-background"
-                        @click="(e)=>{ console.log(e.target.parentElement.classList.remove('hide-section')) }">
+                        @click="(e)=>{ e.target.parentElement.classList.remove('hide-section') }">
                     </div>
 
                     <div class="title">
@@ -472,26 +474,26 @@
                     </div>
                     <div class="section-content">
                         <div class="skill" style="position: relative;" v-for="(skill,i) in resume.skills">
-                            
+
                             <div class="btns-up-down hideinprint" style="left: -30px;">
                                 <button class="btn-up" @click="moveItem(i,i-1,resume.skills)"></button>
                                 <button class="btn-down" @click="moveItem(i,i+1,resume.skills)"></button>
                             </div>
 
-                            <button class="delete-btn" @click="resume.skills.splice(i, 1);">
+                            <button class="delete-btn" @click="resume.skills.splice(i, 1);changeEditableFlag();">
                                 delete
                             </button>
 
-                            <span class="skill-title">{{ skill.name }}</span>
+                            <span class="skill-title"><p-editable :flag="editableflag" v-model="skill.name" /></span>
                             <div class="skill-content">
                                 <div class="subskill" v-for="(sskill,i) in skill.subskills">
                                     <div class="btns-up-down hideinprint">
                                         <button class="btn-up" @click="moveItem(i,i-1,skill.subskills)"></button>
                                         <button class="btn-down" @click="moveItem(i,i+1,skill.subskills)"></button>
                                     </div>
-                                    <div class="subskill-name">{{ sskill.name }}</div>
+                                    <div class="subskill-name"><p-editable :flag="editableflag" v-model="sskill.name" /></div>
                                     <button style="position: relative;margin-left: 30px;" class="delete-btn"
-                                        @click="skill.subskills.splice(i, 1);">
+                                        @click="skill.subskills.splice(i, 1);changeEditableFlag();">
                                         delete
                                     </button>
                                     <div class="subskill-rating">
@@ -529,45 +531,45 @@
             <div class="content">
                 <div class="resume-head">
                     <button class="hide-btn"
-                        @click="(e)=>{ console.log(e.target.parentElement.classList.add('hide-section')); }">
+                        @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
                         hide
                     </button>
 
                     <div class="hide-background"
-                        @click="(e)=>{ console.log(e.target.parentElement.classList.remove('hide-section')) }">
+                        @click="(e)=>{ e.target.parentElement.classList.remove('hide-section') }">
                     </div>
 
-                    <span class="lastname">{{ lastname }}</span><br>
-                    <span class="firstname">{{ firstname }}</span><br>
-                    <span class="profession">{{ job }}</span>
+                    <span class="lastname"><p-editable :flag="editableflag" v-model="lastname" /></span><br>
+                    <span class="firstname"><p-editable :flag="editableflag" v-model="firstname" /></span><br>
+                    <span class="profession"><p-editable :flag="editableflag" v-model="job" /></span>
                 </div>
                 <section>
 
                     <button class="hide-btn" style="height: 20px;"
-                        @click="(e)=>{ console.log(e.target.parentElement.classList.add('hide-section')); }">
+                        @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
                         hide
                     </button>
 
                     <div class="hide-background"
-                        @click="(e)=>{ console.log(e.target.parentElement.classList.remove('hide-section')) }">
+                        @click="(e)=>{ e.target.parentElement.classList.remove('hide-section') }">
                     </div>
 
                     <div class="title">PROFILE</div>
                     <div class="profile-content">
                         <p>
-                            {{ aboutme }}
+                            <p-editable :flag="editableflag" v-model="aboutme" />
                         </p>
                     </div>
                 </section>
                 <section class="edu-exp-section">
 
                     <button class="hide-btn"
-                        @click="(e)=>{ console.log(e.target.parentElement.classList.add('hide-section')); }">
+                        @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
                         hide
                     </button>
 
                     <div class="hide-background"
-                        @click="(e)=>{ console.log(e.target.parentElement.classList.remove('hide-section')) }">
+                        @click="(e)=>{ e.target.parentElement.classList.remove('hide-section') }">
                     </div>
 
                     <div class="title">
@@ -580,7 +582,7 @@
                                 <button class="btn-up" @click="moveItem(i,i-1,education)"></button>
                                 <button class="btn-down" @click="moveItem(i,i+1,education)"></button>
                             </div>
-                            <button class="delete-btn" @click="education.splice(i, 1);">
+                            <button class="delete-btn" @click="education.splice(i, 1);changeEditableFlag();">
                                 delete
                             </button>
                             <div class="time-line" v-if="i+1 != education.length">
@@ -589,19 +591,19 @@
 
                             <div class="date">
                                 <div class="cercle"></div>
-                                <span>{{ edu.date }}</span>
+                                <span><p-editable :flag="editableflag" v-model="edu.date" /></span>
                             </div>
                             <div class="edu-exp-item-content">
                                 <span class="edu-exp-item-title">
-                                    {{ edu.title }}
+                                    <p-editable :flag="editableflag" v-model="edu.title" />
                                 </span>
                                 <br>
                                 <span class="edu-exp-item-place">
-                                    {{ edu.place.name }}
+                                    <p-editable :flag="editableflag" v-model="edu.place.name" />
                                 </span>
                                 <br>
                                 <p>
-                                    {{ edu.content }}
+                                    <p-editable :flag="editableflag" v-model="edu.content" />
                                 </p>
                             </div>
                         </div>
@@ -615,12 +617,12 @@
                 <section class="edu-exp-section">
 
                     <button class="hide-btn"
-                        @click="(e)=>{ console.log(e.target.parentElement.classList.add('hide-section')); }">
+                        @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
                         hide
                     </button>
 
                     <div class="hide-background"
-                        @click="(e)=>{ console.log(e.target.parentElement.classList.remove('hide-section')) }">
+                        @click="(e)=>{ e.target.parentElement.classList.remove('hide-section') }">
                     </div>
 
                     <div class="title">
@@ -632,7 +634,7 @@
                                 <button class="btn-up" @click="moveItem(i,i-1,experience)"></button>
                                 <button class="btn-down" @click="moveItem(i,i+1,experience)"></button>
                             </div>
-                            <button class="delete-btn" @click="experience.splice(i, 1);">
+                            <button class="delete-btn" @click="experience.splice(i, 1);changeEditableFlag();">
                                 delete
                             </button>
                             <div class="time-line" v-if="i+1 != experience.length">
@@ -640,19 +642,19 @@
                             </div>
                             <div class="date">
                                 <div class="cercle"></div>
-                                <span>{{ exp.date }}</span>
+                                <span><p-editable :flag="editableflag" v-model="exp.date" /></span>
                             </div>
                             <div class="edu-exp-item-content">
                                 <span class="edu-exp-item-title">
-                                    {{ exp.title }}
+                                    <p-editable :flag="editableflag" v-model="exp.title" />
                                 </span>
                                 <br>
                                 <span class="edu-exp-item-place">
-                                    {{ exp.place.name }}
+                                    <p-editable :flag="editableflag" v-model="exp.place.name" />
                                 </span>
                                 <br>
                                 <p>
-                                    {{ exp.content }}
+                                    <p-editable :flag="editableflag" v-model="exp.content" />
                                 </p>
                             </div>
 
@@ -667,15 +669,48 @@
         </div>
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <!-- vuejs dev -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <!-- vuejs prod -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script> -->
+
     <script>
         (async () => {
             const data = (await axios.get("/db.json")).data;
 
+            Vue.component('p-editable', {
+                template: `
+                    <p
+                        ref="editable"
+                        contenteditable
+                        @input="onInput"
+                    />
+                `,
+                props: ['value','flag'],
+                watch:{
+                    flag : function(v){
+                        this.$refs.editable.innerText = this.value;
+                    }
+                },
+                mounted() {
+                    this.$refs.editable.innerText = this.value;
+                },
+                methods: {
+                    onInput(e) {
+                        let text = e.target.innerText;
+                        if(text[0] == ''){
+                            text = text.substring(1);
+                        }
+                        this.$emit('input', e.target.innerText);
+                    }
+                },
+            })
+
             var app = new Vue({
                 el: '#app',
                 data: {
-                    ...data
+                    ...data,
+                    editableflag : true
                 },
                 mounted() {
                     // window.print();
@@ -695,18 +730,24 @@
 
                 },
                 methods: {
+                    changeEditableFlag(){
+                        this.editableflag = !this.editableflag;
+                    },
                     changeColor(color) {
                         document.documentElement.style.setProperty('--main-color', color);
                     },
                     moveItem(from, to, data) {
 
-                        if(!(to>=0&&to<data.length))return;
-
+                        if (!(to >= 0 && to < data.length)) return;
+                        
                         // remove `from` item and store it
                         var f = data.splice(from, 1)[0];
                         // insert stored item into position `to`
                         data.splice(to, 0, f);
-                    }
+
+                        this.changeEditableFlag();
+
+                    },
                 },
             });
 
