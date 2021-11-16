@@ -83,6 +83,7 @@
             align-items: center;
             justify-content: space-between;
             margin-bottom: 5px;
+            position: relative;
         }
 
         .skills-section .subskill-rating {
@@ -292,6 +293,43 @@
             opacity: .3;
         }
 
+        .btns-up-down {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            right: 100%;
+            transform: translateY(-50%);
+            top: 50%;
+            height: 14px;
+            width: 15px;
+            opacity: .3;
+        }
+
+        *:hover > .btns-up-down{
+            opacity: 1;
+        }
+
+        .btns-up-down button {
+            border-style: none;
+            font-size: 8px;
+            background: transparent;
+            border: solid 4px black;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            cursor: pointer;
+        }
+
+        .btns-up-down .btn-up {
+            top: 0;
+            border-color: transparent transparent black transparent;
+        }
+
+        .btns-up-down .btn-down {
+            top: 100%;
+            border-color: black transparent transparent;
+        }
+
         @media print {
 
 
@@ -400,7 +438,11 @@
                     <div class="title">
                         INFO
                     </div>
-                    <div class="section-content" v-for="(inf,i) in resume.info">
+                    <div class="section-content" style="position: relative;" v-for="(inf,i) in resume.info">
+                        <div class="btns-up-down hideinprint">
+                            <button class="btn-up" @click="moveItem(i,i-1,resume.info)"></button>
+                            <button class="btn-down" @click="moveItem(i,i+1,resume.info)"></button>
+                        </div>
                         <button class="delete-btn" @click="resume.info.splice(i, 1);">
                             delete
                         </button>
@@ -428,7 +470,12 @@
                         SKILLS
                     </div>
                     <div class="section-content">
-                        <div class="skill" v-for="(skill,i) in resume.skills">
+                        <div class="skill" style="position: relative;" v-for="(skill,i) in resume.skills">
+                            
+                            <div class="btns-up-down hideinprint" style="left: -30px;">
+                                <button class="btn-up" @click="moveItem(i,i-1,resume.skills)"></button>
+                                <button class="btn-down" @click="moveItem(i,i+1,resume.skills)"></button>
+                            </div>
 
                             <button class="delete-btn" @click="resume.skills.splice(i, 1);">
                                 delete
@@ -437,6 +484,10 @@
                             <span class="skill-title">{{ skill.name }}</span>
                             <div class="skill-content">
                                 <div class="subskill" v-for="(sskill,i) in skill.subskills">
+                                    <div class="btns-up-down hideinprint">
+                                        <button class="btn-up" @click="moveItem(i,i-1,skill.subskills)"></button>
+                                        <button class="btn-down" @click="moveItem(i,i+1,skill.subskills)"></button>
+                                    </div>
                                     <div class="subskill-name">{{ sskill.name }}</div>
                                     <button style="position: relative;margin-left: 30px;" class="delete-btn"
                                         @click="skill.subskills.splice(i, 1);">
@@ -524,6 +575,10 @@
                     <div class="edu-exp-content">
 
                         <div class="edu-exp-item" v-for="(edu,i) in education">
+                            <div class="btns-up-down hideinprint">
+                                <button class="btn-up" @click="moveItem(i,i-1,education)"></button>
+                                <button class="btn-down" @click="moveItem(i,i+1,education)"></button>
+                            </div>
                             <button class="delete-btn" @click="education.splice(i, 1);">
                                 delete
                             </button>
@@ -572,6 +627,10 @@
                     </div>
                     <div class="edu-exp-content">
                         <div class="edu-exp-item" :style="exp.style" v-for="(exp,i) in experience">
+                            <div class="btns-up-down hideinprint">
+                                <button class="btn-up" @click="moveItem(i,i-1,experience)"></button>
+                                <button class="btn-down" @click="moveItem(i,i+1,experience)"></button>
+                            </div>
                             <button class="delete-btn" @click="experience.splice(i, 1);">
                                 delete
                             </button>
@@ -624,7 +683,8 @@
                     [
                         '.add-btn',
                         '.delete-btn',
-                        '.hide-btn'
+                        '.hide-btn',
+                        '.btns-up-down'
                     ].forEach((cls) => {
                         document.querySelectorAll(cls).forEach((elem) => {
                             elem.setAttribute("contenteditable", "false");
@@ -635,6 +695,15 @@
                 methods: {
                     changeColor(color) {
                         document.documentElement.style.setProperty('--main-color', color);
+                    },
+                    moveItem(from, to, data) {
+
+                        if(!(to>=0&&to<data.length))return;
+
+                        // remove `from` item and store it
+                        var f = data.splice(from, 1)[0];
+                        // insert stored item into position `to`
+                        data.splice(to, 0, f);
                     }
                 },
             });
