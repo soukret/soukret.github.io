@@ -119,7 +119,7 @@
         .resume-head .profession {}
 
         .profile-content {
-            text-align: justify;
+            /* text-align: justify; */
         }
 
         .edu-exp-section .edu-exp-item {
@@ -140,7 +140,7 @@
 
         .edu-exp-section .edu-exp-item .edu-exp-item-content {
             width: 70%;
-            text-align: justify;
+            /* text-align: justify; */
             margin-left: 5px;
         }
 
@@ -425,6 +425,7 @@
                     <option value="-1">default</option>
                     <option v-for="(copy,i) in copies" :value="i" :key="'copy_'+i">{{ copy.name }}</option>
                 </select>
+                <input type="text" v-model="data.name" style="width: 60px; margin-left:5px;" placeholder="name">
                 <button v-if="selected_copy != -1" style="background-color: red;margin-left: 5px;" class="site-button" @click="copies.splice(selected_copy, 1);saveCopies();selected_copy=-1;changeEditableFlag()" >x</button>
                 <button class="site-button" style="margin-left: 5px;" @click="addCopy();saveCopies()">create</button>
                 <button class="site-button" style="margin-left: 5px;" @click="updateCopy()">save</button>
@@ -781,7 +782,7 @@
                     },
                     addCopy(name = null) {
                         let copy = {...this.data};
-                        if (!name) {
+                        if (!name && !copy.name) {
                             name = 'copy_' + this.copies.length;
                         }
                         copy.name = name;
