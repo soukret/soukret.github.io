@@ -419,6 +419,16 @@
                     @click="changeColor('rgb(0, 0, 0)')"></div>
                 <input class="settings-color-item" type="color" @change="changeColor($event.target.value)">
             </div>
+            <div class="setting-item">
+                <span>copies :</span>
+                <select class="form-control" @change="selectedCopyChanged" v-model="selected_copy">
+                    <option value="-1">default</option>
+                    <option v-for="(copy,i) in copies" :value="i" :key="'copy_'+i">{{ copy.name }}</option>
+                </select>
+                <button v-if="selected_copy != -1" style="background-color: red;margin-left: 5px;" class="site-button" @click="copies.splice(selected_copy, 1);saveCopies();selected_copy=-1;changeEditableFlag()" >x</button>
+                <button class="site-button" style="margin-left: 5px;" @click="addCopy();saveCopies()">create</button>
+                <button class="site-button" style="margin-left: 5px;" @click="updateCopy()">save</button>
+            </div>
         </div>
 
         <div id="resume">
@@ -427,8 +437,7 @@
                 <div class="border"></div>
                 <section class="info-section">
 
-                    <button class="hide-btn"
-                        @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
+                    <button class="hide-btn" @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
                         hide
                     </button>
 
@@ -439,12 +448,12 @@
                     <div class="title">
                         INFO
                     </div>
-                    <div class="section-content" style="position: relative;" v-for="(inf,i) in resume.info">
+                    <div class="section-content" style="position: relative;" v-for="(inf,i) in data.resume.info">
                         <div class="btns-up-down hideinprint">
-                            <button class="btn-up" @click="moveItem(i,i-1,resume.info);"></button>
-                            <button class="btn-down" @click="moveItem(i,i+1,resume.info)"></button>
+                            <button class="btn-up" @click="moveItem(i,i-1,data.resume.info);"></button>
+                            <button class="btn-down" @click="moveItem(i,i+1,data.resume.info)"></button>
                         </div>
-                        <button class="delete-btn" @click="resume.info.splice(i, 1);changeEditableFlag();">
+                        <button class="delete-btn" @click="data.resume.info.splice(i, 1);changeEditableFlag();">
                             delete
                         </button>
                         <span class="info-title">
@@ -455,13 +464,13 @@
                         </div>
                     </div>
                     <div class="section-content hideinprint" style="height: 20px;">
-                        <button class="add-btn" @click="resume.info.push({'name': '____','value': '____'})">add</button>
+                        <button class="add-btn"
+                            @click="data.resume.info.push({'name': '____','value': '____'})">add</button>
                     </div>
                 </section>
                 <section class="skills-section">
 
-                    <button class="hide-btn"
-                        @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
+                    <button class="hide-btn" @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
                         hide
                     </button>
 
@@ -473,25 +482,29 @@
                         SKILLS
                     </div>
                     <div class="section-content">
-                        <div class="skill" style="position: relative;" v-for="(skill,i) in resume.skills">
+                        <div class="skill" style="position: relative;" v-for="(skill,i) in data.resume.skills">
 
                             <div class="btns-up-down hideinprint" style="left: -30px;">
-                                <button class="btn-up" @click="moveItem(i,i-1,resume.skills)"></button>
-                                <button class="btn-down" @click="moveItem(i,i+1,resume.skills)"></button>
+                                <button class="btn-up" @click="moveItem(i,i-1,data.resume.skills)"></button>
+                                <button class="btn-down" @click="moveItem(i,i+1,data.resume.skills)"></button>
                             </div>
 
-                            <button class="delete-btn" @click="resume.skills.splice(i, 1);changeEditableFlag();">
+                            <button class="delete-btn" @click="data.resume.skills.splice(i, 1);changeEditableFlag();">
                                 delete
                             </button>
 
-                            <span class="skill-title"><p-editable :flag="editableflag" v-model="skill.name" /></span>
+                            <span class="skill-title">
+                                <p-editable :flag="editableflag" v-model="skill.name" />
+                            </span>
                             <div class="skill-content">
                                 <div class="subskill" v-for="(sskill,i) in skill.subskills">
                                     <div class="btns-up-down hideinprint">
                                         <button class="btn-up" @click="moveItem(i,i-1,skill.subskills)"></button>
                                         <button class="btn-down" @click="moveItem(i,i+1,skill.subskills)"></button>
                                     </div>
-                                    <div class="subskill-name"><p-editable :flag="editableflag" v-model="sskill.name" /></div>
+                                    <div class="subskill-name">
+                                        <p-editable :flag="editableflag" v-model="sskill.name" />
+                                    </div>
                                     <button style="position: relative;margin-left: 30px;" class="delete-btn"
                                         @click="skill.subskills.splice(i, 1);changeEditableFlag();">
                                         delete
@@ -513,7 +526,7 @@
                             </div>
                         </div>
                         <div class="skill hideinprint">
-                            <button class="add-btn" @click="resume.skills.push(
+                            <button class="add-btn" @click="data.resume.skills.push(
                             {
                                 'name': '____',
                                 'subskills': [
@@ -530,8 +543,7 @@
             </div>
             <div class="content">
                 <div class="resume-head">
-                    <button class="hide-btn"
-                        @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
+                    <button class="hide-btn" @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
                         hide
                     </button>
 
@@ -539,9 +551,15 @@
                         @click="(e)=>{ e.target.parentElement.classList.remove('hide-section') }">
                     </div>
 
-                    <span class="lastname"><p-editable :flag="editableflag" v-model="lastname" /></span><br>
-                    <span class="firstname"><p-editable :flag="editableflag" v-model="firstname" /></span><br>
-                    <span class="profession"><p-editable :flag="editableflag" v-model="job" /></span>
+                    <span class="lastname">
+                        <p-editable :flag="editableflag" v-model="data.lastname" />
+                    </span><br>
+                    <span class="firstname">
+                        <p-editable :flag="editableflag" v-model="data.firstname" />
+                    </span><br>
+                    <span class="profession">
+                        <p-editable :flag="editableflag" v-model="data.job" />
+                    </span>
                 </div>
                 <section>
 
@@ -557,14 +575,13 @@
                     <div class="title">PROFILE</div>
                     <div class="profile-content">
                         <p>
-                            <p-editable :flag="editableflag" v-model="aboutme" />
+                            <p-editable :flag="editableflag" v-model="data.aboutme" />
                         </p>
                     </div>
                 </section>
                 <section class="edu-exp-section">
 
-                    <button class="hide-btn"
-                        @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
+                    <button class="hide-btn" @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
                         hide
                     </button>
 
@@ -577,21 +594,23 @@
                     </div>
                     <div class="edu-exp-content">
 
-                        <div class="edu-exp-item" v-for="(edu,i) in education">
+                        <div class="edu-exp-item" v-for="(edu,i) in data.education">
                             <div class="btns-up-down hideinprint">
-                                <button class="btn-up" @click="moveItem(i,i-1,education)"></button>
-                                <button class="btn-down" @click="moveItem(i,i+1,education)"></button>
+                                <button class="btn-up" @click="moveItem(i,i-1,data.education)"></button>
+                                <button class="btn-down" @click="moveItem(i,i+1,data.education)"></button>
                             </div>
-                            <button class="delete-btn" @click="education.splice(i, 1);changeEditableFlag();">
+                            <button class="delete-btn" @click="data.education.splice(i, 1);changeEditableFlag();">
                                 delete
                             </button>
-                            <div class="time-line" v-if="i+1 != education.length">
+                            <div class="time-line" v-if="i+1 != data.education.length">
                                 <div class="time-line-border"></div>
                             </div>
 
                             <div class="date">
                                 <div class="cercle"></div>
-                                <span><p-editable :flag="editableflag" v-model="edu.date" /></span>
+                                <span>
+                                    <p-editable :flag="editableflag" v-model="edu.date" />
+                                </span>
                             </div>
                             <div class="edu-exp-item-content">
                                 <span class="edu-exp-item-title">
@@ -609,15 +628,14 @@
                         </div>
                         <div class="edu-exp-item hideinprint">
                             <button class="add-btn"
-                                @click="education.push({ title: '____', place: { name: '____', link: '#' }, date: '____', details: '____', content: '____' })">add</button>
+                                @click="data.education.push({ title: '____', place: { name: '____', link: '#' }, date: '____', details: '____', content: '____' })">add</button>
                         </div>
 
                     </div>
                 </section>
                 <section class="edu-exp-section">
 
-                    <button class="hide-btn"
-                        @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
+                    <button class="hide-btn" @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
                         hide
                     </button>
 
@@ -629,20 +647,22 @@
                         EXPERIENCE
                     </div>
                     <div class="edu-exp-content">
-                        <div class="edu-exp-item" :style="exp.style" v-for="(exp,i) in experience">
+                        <div class="edu-exp-item" :style="exp.style" v-for="(exp,i) in data.experience">
                             <div class="btns-up-down hideinprint">
-                                <button class="btn-up" @click="moveItem(i,i-1,experience)"></button>
-                                <button class="btn-down" @click="moveItem(i,i+1,experience)"></button>
+                                <button class="btn-up" @click="moveItem(i,i-1,data.experience)"></button>
+                                <button class="btn-down" @click="moveItem(i,i+1,data.experience)"></button>
                             </div>
-                            <button class="delete-btn" @click="experience.splice(i, 1);changeEditableFlag();">
+                            <button class="delete-btn" @click="data.experience.splice(i, 1);changeEditableFlag();">
                                 delete
                             </button>
-                            <div class="time-line" v-if="i+1 != experience.length">
+                            <div class="time-line" v-if="i+1 != data.experience.length">
                                 <div class="time-line-border"></div>
                             </div>
                             <div class="date">
                                 <div class="cercle"></div>
-                                <span><p-editable :flag="editableflag" v-model="exp.date" /></span>
+                                <span>
+                                    <p-editable :flag="editableflag" v-model="exp.date" />
+                                </span>
                             </div>
                             <div class="edu-exp-item-content">
                                 <span class="edu-exp-item-title">
@@ -661,7 +681,7 @@
                         </div>
                         <div class="edu-exp-item hideinprint">
                             <button class="add-btn"
-                                @click="experience.push({ title: '____', place: { name: '____', link: '#' }, date: '____', details: '____', content: '____' })">add</button>
+                                @click="data.experience.push({ title: '____', place: { name: '____', link: '#' }, date: '____', details: '____', content: '____' })">add</button>
                         </div>
                     </div>
                 </section>
@@ -686,9 +706,9 @@
                         @input="onInput"
                     />
                 `,
-                props: ['value','flag'],
-                watch:{
-                    flag : function(v){
+                props: ['value', 'flag'],
+                watch: {
+                    flag: function (v) {
                         this.$refs.editable.innerText = this.value;
                     }
                 },
@@ -698,7 +718,7 @@
                 methods: {
                     onInput(e) {
                         let text = e.target.innerText;
-                        if(text[0] == ''){
+                        if (text[0] == '') {
                             text = text.substring(1);
                         }
                         this.$emit('input', e.target.innerText);
@@ -708,13 +728,16 @@
 
             var app = new Vue({
                 el: '#app',
-                data: {
-                    ...data,
-                    editableflag : true
+                data() {
+                    return {
+                        data,
+                        editableflag: false,
+                        copies: [],
+                        color: "rgb(107, 98, 231)",
+                        selected_copy: -1
+                    }
                 },
                 mounted() {
-                    // window.print();
-
                     //disable editing some elements
                     [
                         '.add-btn',
@@ -728,18 +751,23 @@
                         })
                     });
 
+                    this.changeColor(this.color);
+
+                    this.loadCopies();
+
                 },
                 methods: {
-                    changeEditableFlag(){
+                    changeEditableFlag() {
                         this.editableflag = !this.editableflag;
                     },
                     changeColor(color) {
+                        this.color = color;
                         document.documentElement.style.setProperty('--main-color', color);
                     },
                     moveItem(from, to, data) {
 
                         if (!(to >= 0 && to < data.length)) return;
-                        
+
                         // remove `from` item and store it
                         var f = data.splice(from, 1)[0];
                         // insert stored item into position `to`
@@ -748,6 +776,42 @@
                         this.changeEditableFlag();
 
                     },
+                    loadCopies() {
+                        this.copies = JSON.parse(window.localStorage.getItem('copies')) ?? [];
+                    },
+                    addCopy(name = null) {
+                        let copy = {...this.data};
+                        if (!name) {
+                            name = 'copy_' + this.copies.length;
+                        }
+                        copy.name = name;
+                        copy.color = this.color;
+                        this.copies.push(copy);
+                        this.selected_copy = this.copies.length - 1;
+                        this.data = { ...copy };
+                    },
+                    updateCopy(i = this.selected_copy) {
+                        if (i != -1) {
+                            this.copies[i] = { ...this.data };
+                        }
+                        this.saveCopies();
+                    },
+                    saveCopies() {
+                        window.localStorage.setItem('copies', JSON.stringify(this.copies));
+                    },
+                    selectedCopyChanged(e) {
+
+                        if(e.target.value == -1){
+                            this.data = data;
+                            this.changeEditableFlag();
+                            return;
+                        }
+
+                        this.data = { ...this.copies[e.target.value] };
+                        this.color = this.data.color ?? "#f00";
+                        this.selected_copy = e.target.value;
+                        this.changeEditableFlag();
+                    }
                 },
             });
 
