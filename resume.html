@@ -247,6 +247,7 @@
             background: rgba(38, 0, 255, 0.157);
             color: white;
             cursor: pointer;
+            z-index: 88;
         }
 
         .delete-btn {
@@ -331,6 +332,19 @@
             border-color: black transparent transparent;
         }
 
+        .img-section {
+            position: relative;;
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cvimg {
+            height: 100%;
+        }
+        
+
         @media print {
 
 
@@ -393,7 +407,7 @@
 </head>
 
 <body>
-    <div id="app" :style="rtl?`direction: rtl;`:''" >
+    <div id="app" :style="rtl?`direction: rtl;`:''">
         <div class="settings">
             <div class="setting-item">
                 <button class="site-button" onclick="window.location = '/'">
@@ -426,12 +440,15 @@
                     <option v-for="(copy,i) in copies" :value="i" :key="'copy_'+i">{{ copy.name }}</option>
                 </select>
                 <input type="text" v-model="data.name" style="width: 60px; margin-inline-start:5px;" placeholder="name">
-                <button v-if="selected_copy != -1" style="background-color: red;margin-inline-start: 5px;" class="site-button" @click="copies.splice(selected_copy, 1);saveCopies();selected_copy=-1;changeEditableFlag()" >x</button>
-                <button class="site-button" style="margin-inline-start: 5px;" @click="addCopy();saveCopies()">create</button>
+                <button v-if="selected_copy != -1" style="background-color: red;margin-inline-start: 5px;"
+                    class="site-button"
+                    @click="copies.splice(selected_copy, 1);saveCopies();selected_copy=-1;changeEditableFlag()">x</button>
+                <button class="site-button" style="margin-inline-start: 5px;"
+                    @click="addCopy();saveCopies()">create</button>
                 <button class="site-button" style="margin-inline-start: 5px;" @click="updateCopy()">save</button>
             </div>
-            <div class="setting-item"  >
-                rtl : 
+            <div class="setting-item">
+                rtl :
                 <input type="checkbox" v-model="rtl">
             </div>
         </div>
@@ -440,6 +457,24 @@
 
             <div class="sidebar">
                 <div class="border"></div>
+
+                <section class="info-section">
+
+                    <button class="hide-btn" @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
+                        hide
+                    </button>
+
+                    <div class="hide-background"
+                        @click="(e)=>{ e.target.parentElement.classList.remove('hide-section') }">
+                    </div>
+
+                    <!-- <div class="title">
+                        IMAGE
+                    </div> -->
+                    <div class="section-content img-section">
+                        <img class="cvimg" src="/assets/cv-img.jpg" alt="" srcset="">
+                    </div>
+                </section>
                 <section class="info-section">
 
                     <button class="hide-btn" @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
@@ -740,7 +775,7 @@
                         copies: [],
                         color: "rgb(107, 98, 231)",
                         selected_copy: -1,
-                        rtl : false
+                        rtl: false
                     }
                 },
                 mounted() {
@@ -786,7 +821,7 @@
                         this.copies = JSON.parse(window.localStorage.getItem('copies')) ?? [];
                     },
                     addCopy(name = null) {
-                        let copy = {...this.data};
+                        let copy = { ...this.data };
                         if (!name && !copy.name) {
                             name = 'copy_' + this.copies.length;
                         }
@@ -807,7 +842,7 @@
                     },
                     selectedCopyChanged(e) {
 
-                        if(e.target.value == -1){
+                        if (e.target.value == -1) {
                             this.data = data;
                             this.changeEditableFlag();
                             return;
