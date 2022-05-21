@@ -1,28 +1,13 @@
 {
-    "fullname": "ZADELKHAIR ABDELKODDOUS",
-    "firstname": "ABDELKODDOUS",
-    "lastname": "ZADELKHAIR",
+    "fullname": "SOUKRET BOUAZZA",
+    "firstname": "BOUAZZA",
+    "lastname": "SOUKRET",
     "img": "/assets/images/me.jpg",
-    "job": "Full stack web developer",
-    "email": "abdo.zad.raja2@gmail.com",
-    "phone": "+212680096104",
-    "adresse": "104, Rue Soussa, Hay Naima, Berrechid, Morocco",
+    "job": "STORE MANAGER",
+    "email": "soukret@gmail.com",
+    "phone": "+212600668355",
+    "adresse": "N46 LBAIDY 3, Berrechid, Morocco",
     "socialmedia": [
-        {
-            "name": "facebook",
-            "logo": "fab fa-facebook-f mr-3",
-            "value": "https://www.facebook.com/Zadelkhair.Abdelkoddous/"
-        },
-        {
-            "name": "twitter",
-            "logo": "fab fa-twitter mr-3",
-            "value": "https://twitter.com/zad_elkhair?lang=ar"
-        },
-        {
-            "name": "github",
-            "logo": "fab fa-github mr-3",
-            "value": "https://github.com/Zadelkhair"
-        },
         {
             "name": "linkedin",
             "logo": "fab fa-linkedin-in",
@@ -30,244 +15,94 @@
         }
     ],
     "cv": "/assets/zadelkhair_abdelkoddous_resume.pdf",
-    "aboutme": "My name is ABDELKODDOUS ZADELKHAIR I'm 23 years old, full stack web developer (LARAVEL & VUEJS) with a vast array of knowledge in many different front end and back end languages, responsive frameworks, databases, desktop and mobile applications ( C# and JAVA ). and best coding practices.",
-    "whatido": [
-        {
-            "logo": "fa fa-bullseye purple-color",
-            "title": "Web Development",
-            "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
-        },
-        {
-            "logo": "fa fa-bullseye purple-color",
-            "title": "App Development",
-            "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
-        },
-        {
-            "logo": "fa fa-bullseye purple-color",
-            "title": "UI Design",
-            "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
-        }
-    ],
+    "aboutme": "I have a commercial background and I would like to work in a large group to bring my rigor and sense of initiative. Passionate about business, merchandising and distribution, very invested and professional, I know how to adapt easily and work in a team to achieve the set objectives.",
+    "whatido": [],
     "skills": {
-        "tech": [
-            {
-                "name": "php",
-                "rate": 90,
-                "useit": true
-            },
-            {
-                "name": "laravel",
-                "rate": 95,
-                "useit": true
-            },
-            {
-                "name": "vuejs",
-                "rate": 95,
-                "useit": true
-            },
-            {
-                "name": "angular",
-                "rate": 95,
-                "useit": true
-            },
-            {
-                "name": "javascript",
-                "rate": 93,
-                "useit": true
-            },
-            {
-                "name": "react native",
-                "rate": 80,
-                "useit": true
-            },
-            {
-                "name": "java",
-                "rate": 80,
-                "useit": true
-            },
-            {
-                "name": "c#",
-                "rate": 80,
-                "useit": true
-            },
-            {
-                "name": "html/css",
-                "rate": 95,
-                "useit": true
-            }
-        ],
-        "profes": [
-            {
-                "name": "Communication",
-                "rate": 86
-            },
-            {
-                "name": "Team Work",
-                "rate": 86
-            },
-            {
-                "name": "Project Management",
-                "rate": 86
-            },
-            {
-                "name": "Creativity",
-                "rate": 86
-            }
-        ]
+        "tech": [],
+        "profes": []
     },
     "education": [
         {
-            "title": "Bachelor Of Computer Science",
+            "title": "Bachelor Degree in logistics management and quality",
             "place": {
-                "name": "University Ibn Zohr, Taroudant",
-                "link": "https://www.uiz.ac.ma/node/236/"
+                "name": "E.S.T in berrechid, morocco",
+                "link": ""
             },
-            "date": "2020 - 2021",
-            "details": "the 'Computer Engineering' bachlor takes six semesters.\nThe main objective of this training is to train operational and competent IT specialists in the various fields of IT in particular, the design and development of software, Web technologies, the implementation of information systems, configuration and network administration, database administration, new mobile technologies, data analysis etc.",
-            "content": "i got my bachelor of computer science with honor degree ( 16/20 )."
+            "date": "2020\n2021",
+            "details": "",
+            "content": ""
         },
         {
-            "title": "Skilled Technician in Software Development Diploma",
+            "title": "Diploma of specialized technician in business management",
             "place": {
-                "name": "ISTICG OFPPT, Berrechid",
-                "link": "https://www.ofppt.ma/en/branches/it-development-techniques"
+                "name": "Higher institute of it techniques, trade and management in berrechid, morocco.",
+                "link": ""
             },
-            "date": "2018 - 2020",
-            "details": "The 'Skilled Technician in Software Development' is a support professional development and maintenance of computer applications. It intervenes, usually on behalf of companies Services and Computer Engineering, in many application areas (industry, management, leisure etc.).Upstream of the project the technician is responsive to customer expectations. This study accurately a number of parameters to carry out his mission; these include specifications, capacity of the technical environment and the constraints of the customer's production system. Downstream, it participates in the commissioning and technical support of the application.",
-            "content": "I got this diploma in software development with honor degree ( 17/20 )."
+            "date": "2020\n2021",
+            "details": "",
+            "content": ""
         },
         {
-            "title": "Height School Diploma",
+            "title": "Bachelor of baccalaureate modern letter.",
             "place": {
-                "name": "Ouled Hriz, Berrechid",
-                "link": "https://www.men.gov.ma/Fr/Pages/Ens-secoqualif.aspx"
+                "name": "berrechid, morocco.",
+                "link": ""
             },
-            "date": "2016 - 2017",
-            "details": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum",
-            "content": "high school diploma scientific Ouled Hriz Berrechid."
+            "date": "2020\n2021",
+            "details": "",
+            "content": ""
+        },
+        {
+            "title": "·Certificate of continuing education dedicated",
+            "place": {
+                "name": "The international university.",
+                "link": ""
+            },
+            "date": "2020\n2021",
+            "details": "",
+            "content": ""
         }
     ],
     "experience": [
         {
-            "title": "stock management system",
-            "place": {
-                "name": "tax administration , Marrakech",
-                "link": "#"
-            },
-            "date": "2021 - Present",
-            "details": "",
-            "content": "Stock management application for the human resources department of the tax administration in Marrakech.",
-            "hideinweb":true
-        },
-        {
-            "title": "elwadifa.info",
-            "place": {
-                "name": "freelance",
-                "link": "#"
-            },
-            "date": "2021 - Present",
-            "details": "",
-            "content": "job announcement website.",
-            "hideinweb":true
-        },
-        {
-            "title": "traineeship at AGRI4.0",
-            "place": {
-                "name": "Agri 4.0, AGADIR",
-                "link": "#"
-            },
-            "date": "2021 - 3 months",
-            "details": "",
-            "content": "3-month internship at the agri 4.0 company, I developed during this internship a mobile application that manages a nursery with reactnative laravel technology.",
-            "hideinweb":false
-        },
-        {
-            "title": "Frontend developer at ZadTech",
-            "place": {
-                "name": "ZadTech, Elmohammadia",
-                "link": "#"
-            },
-            "date": "2020 - 5 months",
-            "details": "",
-            "content": "Frontend developer ( vuejs and angular ) at zadtech company.",
-            "hideinweb":false
-        },
-        {
-            "title": "IT administrator at Al-Khayrat",
-            "place": {
-                "name": "Al-khayrat, Berrechid ",
-                "link": "#"
-            },
-            "date": "2016-2020",
-            "details": "",
-            "content": "i worked as an it administrator, i have developed during this period multiple application, Candidate administration ( desktop application with c# ) , code permis al khayrat ( android version with java , disktop application with c# , web version with php ' laravel ' / vuejs )",
-            "hideinweb":false
-        },
-        {
-            "title": "utory.ma",
-            "place": {
-                "name": "freelance,Berrechid",
-                "link": "#"
-            },
-            "date": "2021",
-            "details": "",
-            "content": "UTORY , school management course online With laravel and vuejsWith laravel and vuejs.",
-            "hideinweb":true
-        },
-        {
-            "title": "Fullstack web developer Freelancer",
+            "title": "Store manager at U Express Morocco",
             "place": {
                 "name": "Morocco",
-                "link": "#"
+                "link": ""
             },
-            "date": "2019-2021",
+            "date": "12/6/2021\n30/5/2022",
             "details": "",
-            "content": "Fullstack web developer laravel/vuejs",
-            "hideinweb":false
+            "content": ""
         },
         {
-            "title": "Code permis",
+            "title": "deputy store manager at Carrefour market",
             "place": {
-                "name": "Alkhayrat, Berrechid",
-                "link": "#"
+                "name": "Morocco",
+                "link": ""
             },
-            "date": "2021",
+            "date": "31/10/2016\n3/11/2021",
             "details": "",
-            "content": "Code permis , android application with Java and SQLite",
-            "hideinweb":true
+            "content": ""
         },
         {
-            "title": "Code Alkhayrat",
+            "title": "Head of fresh departement market at Acima",
             "place": {
-                "name": "Alkhayrat, Berrechid",
-                "link": "#"
+                "name": "Morocco",
+                "link": ""
             },
-            "date": "2020",
+            "date": "01/11/2007\n17/10/2016",
             "details": "",
-            "content": "CODE AL KHAYRAT , with laravel/vuejs and graphql",
-            "hideinweb":true
+            "content": ""
         },
         {
-            "title": "Dental care",
+            "title": "Fruit and vegetable buyer",
             "place": {
-                "name": "Frelance, Berrechid",
-                "link": "#"
+                "name": "Agrinigos, Morocco",
+                "link": ""
             },
-            "date": "2020",
+            "date": "01/01/2005\n17/09/2007",
             "details": "",
-            "content": "dental care  Web application with LARAVEL and VUEJS",
-            "hideinweb":true
-        },
-        {
-            "title": "ISTICG",
-            "place": {
-                "name": "ISTICG, Berrechid",
-                "link": "#"
-            },
-            "date": "2019",
-            "details": "",
-            "content": "timeline table management, desktop application with c# and sql server",
-            "hideinweb":true
+            "content": ""
         }
     ],
     "resume": {
@@ -282,7 +117,7 @@
             },
             {
                 "name" : "Birthdate",
-                "value" : "1998/10/14"
+                "value" : "1979/08/12"
             },
             {
                 "name" : "Gender",
@@ -290,226 +125,95 @@
             },
             {
                 "name" : "Phone",
-                "value" : "+212680096104"
+                "value" : "+212 600668355"
             },
             {
                 "name" : "Email",
-                "value" : "abdo.zad.raja2@gmail.com"
+                "value" : "soukret@gmail.com"
             },
             {
-                "name" : "Website",
-                "value" : "www.zadelkhair.me"
+                "name": "Passport",
+                "value": "FQ8523594"
+            },
+            {
+                "name": "National ID",
+                "value": "QA93250"
             }
         ],
         "skills": [
             {
-                "name": "BACKEND",
+                "name": "",
                 "subskills": [
                     {
-                        "name": "LARAVEL",
+                        "name": "Achieve a maximum turnover in line with the objectives set.",
                         "level": 5
                     },
                     {
-                        "name": "PHP",
+                        "name": "Make proposals to improve the results.",
                         "level": 5
                     },
                     {
-                        "name": "REST API",
+                        "name": "Ensure the reasonable margins.",
                         "level": 5
                     },
                     {
-                        "name": "SQL",
+                        "name": "Have the lowest stock",
                         "level": 5
                     },
                     {
-                        "name": "GRAPH QL",
+                        "name": "Have a good overhead control",
                         "level": 5
                     },
                     {
-                        "name": "JAVA",
-                        "level": 5
-                    }
-                ]
-            },
-            {
-                "name": "FRONTEND",
-                "subskills": [
-                    {
-                        "name": "VUEJS",
+                        "name": "Have a low payroll",
                         "level": 5
                     },
                     {
-                        "name": "ANGULAR JS",
+                        "name": "Supervise and animate the sale team",
                         "level": 5
                     },
                     {
-                        "name": "REACT NATIVE",
+                        "name": "Ensure the smooth operation between the different departments",
                         "level": 5
                     },
                     {
-                        "name": "HTML",
+                        "name": "Stock management (control, highlighting ......)",
                         "level": 5
                     },
                     {
-                        "name": "CSS",
+                        "name": "Monitoring profit margins quarterly &amp; monthly.",
                         "level": 5
                     },
                     {
-                        "name": "JS",
+                        "name": "Participation in the preparation of budgets N +1",
                         "level": 5
                     },
                     {
-                        "name": "BOOTSTRAP",
+                        "name": "Team management (planning, leave; assignment .....)",
                         "level": 5
                     },
                     {
-                        "name": "JQUERY",
+                        "name": "Commands management.",
                         "level": 5
                     },
                     {
-                        "name": "VUEX",
-                        "level": 5
-                    }
-                ]
-            },
-            {
-                "name": "DATABASE",
-                "subskills": [
-                    {
-                        "name": "MYSQL",
+                        "name": "Management standards of quality and safety",
                         "level": 5
                     },
                     {
-                        "name": "SQL SERVER",
+                        "name": "Master of the internal management -gold V5-",
                         "level": 5
                     },
                     {
-                        "name": "ORACLE DB",
+                        "name": "Monitoring turnover (analysis and plan of action) merchandising of département.",
                         "level": 5
                     },
                     {
-                        "name": "SQL LITE",
+                        "name": "Development and assortment (ascent N 1; SEO proposal.continuously.",
                         "level": 5
                     },
                     {
-                        "name": "FIREBASE",
-                        "level": 5
-                    }
-                ]
-            },
-            {
-                "name": "MODELING",
-                "subskills": [
-                    {
-                        "name": "UML",
-                        "level": 5
-                    },
-                    {
-                        "name": "MERISE",
-                        "level": 5
-                    }
-                ]
-            },
-            {
-                "name": "DISKTOP",
-                "subskills": [
-                    {
-                        "name": "C#",
-                        "level": 5
-                    },
-                    {
-                        "name": ".NET",
-                        "level": 5
-                    },
-                    {
-                        "name": "JAVA",
-                        "level": 5
-                    }
-                ]
-            },
-            {
-                "name": "MOBILE",
-                "subskills": [
-                    {
-                        "name": "JAVA",
-                        "level": 5
-                    },
-                    {
-                        "name": "ANDROID",
-                        "level": 5
-                    },
-                    {
-                        "name": "REACT NATIVE",
-                        "level": 5
-                    },
-                    {
-                        "name": "FIREBASE",
-                        "level": 5
-                    }
-                ]
-            },
-            {
-                "name": "OTHER",
-                "subskills": [
-                    {
-                        "name": "npm",
-                        "level": 5
-                    },
-                    {
-                        "name": "git",
-                        "level": 5
-                    },
-                    {
-                        "name": "ubuntu 20",
-                        "level": 5
-                    },
-                    {
-                        "name": "windows server",
-                        "level": 5
-                    },
-                    {
-                        "name": "webpack",
-                        "level": 5
-                    },
-                    {
-                        "name": "access",
-                        "level": 5
-                    },
-                    {
-                        "name": "excel",
-                        "level": 5
-                    },
-                    {
-                        "name": "word",
-                        "level": 5
-                    },
-                    {
-                        "name": "powerpoint",
-                        "level": 5
-                    }
-                ]
-            },
-            {
-                "name": "DESIGN",
-                "subskills": [
-                    {
-                        "name": "Design Software",
-                        "level": 5
-                    },
-                    {
-                        "name": "Photoshop",
-                        "level": 5
-                    },
-                    {
-                        "name": "illustrator",
-                        "level": 5
-                    },
-                    {
-                        "name": "adobe xd",
-                        "level": 5
-                    },
-                    {
-                        "name": "figma",
+                        "name": "Ensure proper operation; customer service &amp; team management.",
                         "level": 5
                     }
                 ]

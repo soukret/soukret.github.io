@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;700&display=swap');
+
 
         :root {
             --main-color: rgb(108, 36, 117);
@@ -18,17 +20,49 @@
             outline: none;
         }
 
+        body {
+            font-size: 14px;
+        }
+
+        /* width */
+        body ::-webkit-scrollbar {
+            width: 0px;
+            height: 0px;
+        }
+
+        /* Track */
+        body ::-webkit-scrollbar-track {
+            background: none;
+        }
+
+        /* Handle */
+        body ::-webkit-scrollbar-thumb {
+            background: none;
+        }
+
+        /* Handle on hover */
+        body ::-webkit-scrollbar-thumb:hover {
+            background: none;
+        }
+
+        .resume-container {
+            overflow: scroll;
+            padding: 30px;
+            margin-top: 100px;
+        }
+
         #resume {
             font-family: 'Almarai', sans-serif;
             display: flex;
             justify-content: space-between;
-            size: 21cm 29.7cm;
-            margin: 30mm 45mm 30mm 45mm;
+            width: 210mm;
+            margin: auto;
+            /* margin: 30mm 45mm 30mm 45mm; */
             /* change the margins as you want them to be. */
         }
 
         .sidebar {
-            width: 30%;
+            width: 20%;
             display: flex;
             flex-direction: column;
             padding-inline-end: 20px;
@@ -46,16 +80,17 @@
         }
 
         .content {
-            width: 70%;
+            width: 80%;
             display: flex;
             flex-direction: column;
-            padding-inline-start: 20px;
+            padding-inline-start: 10px;
+            position: relative;
         }
 
         section {
             display: flex;
             flex-direction: column;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
         }
 
         section .title {
@@ -104,7 +139,8 @@
 
         .resume-head {
             line-height: 1;
-            margin-bottom: 50px;
+            margin-bottom: 10px;
+            position: relative;
         }
 
         .resume-head .lastname {
@@ -114,6 +150,30 @@
         .resume-head .lastname,
         .resume-head .firstname {
             font-size: 40px;
+        }
+
+        .resume-head .qrcode{
+            position: absolute;
+            height: 100%;
+            width: 100px;
+            top: 0;
+            right: 0;
+            /* add background image fill height and positioned to right */
+            background-image: url('/assets/images/qrcode.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .resume-head .qrcode .qrcode-app-logo{
+            position: absolute;
+            height:100%;
+            width: 33%;
+            right: 100%;
+            top:0;
+            background-image: url('/assets/images/linkdin.png');
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            background-position: top right;
         }
 
         .resume-head .profession {}
@@ -133,13 +193,14 @@
         }
 
         .edu-exp-section .edu-exp-item .date {
-            width: 30%;
+            width: 20%;
             font-weight: bold;
             color: var(--main-color);
+            /* font-size: 12px; */
         }
 
         .edu-exp-section .edu-exp-item .edu-exp-item-content {
-            width: 70%;
+            width: 80%;
             /* text-align: justify; */
             margin-inline-start: 5px;
         }
@@ -193,7 +254,6 @@
         }
 
         .settings {
-            position: absolute;
             top: 0;
             inset-inline-start: 0;
             display: flex;
@@ -206,6 +266,11 @@
             position: fixed;
             background: white;
             z-index: 99;
+            /* justify-content: center; */
+            white-space: nowrap;
+            width: 100vw;
+            left: 0;
+            overflow: scroll;
         }
 
         .settings .setting-item {
@@ -302,7 +367,7 @@
             inset-inline-end: 100%;
             transform: translateY(-50%);
             top: 50%;
-            height: 14px;
+            height: 13px;
             width: 15px;
             opacity: .3;
         }
@@ -333,7 +398,8 @@
         }
 
         .img-section {
-            position: relative;;
+            position: relative;
+            ;
             height: 160px;
             display: flex;
             align-items: center;
@@ -343,7 +409,7 @@
         .cvimg {
             height: 100%;
         }
-        
+
 
         @media print {
 
@@ -367,12 +433,19 @@
                 /* margin: 8% 5%; */
             }
 
+            .resume-container {
+                overflow: hidden;
+                padding: 0;
+                margin-top: 0;
+            }
+
             #resume {
                 font-family: 'Almarai', sans-serif;
                 display: flex;
                 justify-content: space-between;
                 size: 21cm 29.7cm;
-                margin: auto;
+                top: 0;
+                width: 100%;
             }
 
             .settings {
@@ -452,279 +525,370 @@
                 <input type="checkbox" v-model="rtl">
             </div>
         </div>
+        <div class="resume-container">
 
-        <div id="resume">
+            <div id="resume">
 
-            <div class="sidebar">
-                <div class="border"></div>
+                <div class="sidebar">
+                    <div class="border"></div>
 
-                <section class="info-section">
+                    <section class="info-section">
 
-                    <button class="hide-btn" @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
-                        hide
-                    </button>
-
-                    <div class="hide-background"
-                        @click="(e)=>{ e.target.parentElement.classList.remove('hide-section') }">
-                    </div>
-
-                    <!-- <div class="title">
-                        IMAGE
-                    </div> -->
-                    <div class="section-content img-section">
-                        <img class="cvimg" src="/assets/cv-img.jpg" alt="" srcset="">
-                    </div>
-                </section>
-                <section class="info-section">
-
-                    <button class="hide-btn" @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
-                        hide
-                    </button>
-
-                    <div class="hide-background"
-                        @click="(e)=>{ e.target.parentElement.classList.remove('hide-section') }">
-                    </div>
-
-                    <div class="title">
-                        INFO
-                    </div>
-                    <div class="section-content" style="position: relative;" v-for="(inf,i) in data.resume.info">
-                        <div class="btns-up-down hideinprint">
-                            <button class="btn-up" @click="moveItem(i,i-1,data.resume.info);"></button>
-                            <button class="btn-down" @click="moveItem(i,i+1,data.resume.info)"></button>
-                        </div>
-                        <button class="delete-btn" @click="data.resume.info.splice(i, 1);changeEditableFlag();">
-                            delete
+                        <button class="hide-btn"
+                            @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
+                            hide
                         </button>
-                        <span class="info-title">
-                            <p-editable :flag="editableflag" v-model="inf.name" />
-                        </span>
-                        <div class="info-content">
-                            <p-editable :flag="editableflag" v-model="inf.value" />
+
+                        <div class="hide-background"
+                            @click="(e)=>{ e.target.parentElement.classList.remove('hide-section') }">
                         </div>
-                    </div>
-                    <div class="section-content hideinprint" style="height: 20px;">
-                        <button class="add-btn"
-                            @click="data.resume.info.push({'name': '____','value': '____'})">add</button>
-                    </div>
-                </section>
-                <section class="skills-section">
 
-                    <button class="hide-btn" @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
-                        hide
-                    </button>
+                        <!-- <div class="title">
+                            IMAGE
+                        </div> -->
+                        <div class="section-content img-section">
+                            <img class="cvimg" :src="data.img" alt="" srcset="">
+                        </div>
+                    </section>
+                    <section class="info-section">
 
-                    <div class="hide-background"
-                        @click="(e)=>{ e.target.parentElement.classList.remove('hide-section') }">
-                    </div>
+                        <button class="hide-btn"
+                            @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
+                            hide
+                        </button>
 
-                    <div class="title">
-                        SKILLS
-                    </div>
-                    <div class="section-content">
-                        <div class="skill" style="position: relative;" v-for="(skill,i) in data.resume.skills">
+                        <div class="hide-background"
+                            @click="(e)=>{ e.target.parentElement.classList.remove('hide-section') }">
+                        </div>
 
-                            <div class="btns-up-down hideinprint" style="inset-inline-start: -30px;">
-                                <button class="btn-up" @click="moveItem(i,i-1,data.resume.skills)"></button>
-                                <button class="btn-down" @click="moveItem(i,i+1,data.resume.skills)"></button>
+                        <div class="title">
+                            INFO
+                        </div>
+                        <div class="section-content" style="position: relative;" v-for="(inf,i) in data.resume.info">
+                            <div class="btns-up-down hideinprint">
+                                <button class="btn-up" @click="moveItem(i,i-1,data.resume.info);"></button>
+                                <button class="btn-down" @click="moveItem(i,i+1,data.resume.info)"></button>
                             </div>
-
-                            <button class="delete-btn" @click="data.resume.skills.splice(i, 1);changeEditableFlag();">
+                            <button class="delete-btn" @click="data.resume.info.splice(i, 1);changeEditableFlag();">
                                 delete
                             </button>
-
-                            <span class="skill-title">
-                                <p-editable :flag="editableflag" v-model="skill.name" />
+                            <span class="info-title">
+                                <p-editable :flag="editableflag" v-model="inf.name" />
                             </span>
-                            <div class="skill-content">
-                                <div class="subskill" v-for="(sskill,i) in skill.subskills">
-                                    <div class="btns-up-down hideinprint">
-                                        <button class="btn-up" @click="moveItem(i,i-1,skill.subskills)"></button>
-                                        <button class="btn-down" @click="moveItem(i,i+1,skill.subskills)"></button>
-                                    </div>
-                                    <div class="subskill-name">
-                                        <p-editable :flag="editableflag" v-model="sskill.name" />
-                                    </div>
-                                    <button style="position: relative;margin-inline-start: 30px;" class="delete-btn"
-                                        @click="skill.subskills.splice(i, 1);changeEditableFlag();">
-                                        delete
-                                    </button>
-                                    <div class="subskill-rating">
-                                        <div v-for="(a,i) in sskill.level" @click="sskill.level=i+1"></div>
-                                        <div style="background: gray !important;" v-for="(b,i) in (5-sskill.level)"
-                                            @click="sskill.level=i+sskill.level+1"></div>
-                                    </div>
-                                </div>
-                                <div class="subskill hideinprint" style="height: 20px;">
-                                    <button class="add-btn" @click="skill.subskills.push(
-                                            {
-                                                'name': '____',
-                                                'level': 3
-                                            }
-                                )">add</button>
-                                </div>
+                            <div class="info-content">
+                                <p-editable :flag="editableflag" v-model="inf.value" />
                             </div>
                         </div>
-                        <div class="skill hideinprint">
-                            <button class="add-btn" @click="data.resume.skills.push(
-                            {
-                                'name': '____',
-                                'subskills': [
-                                    {
-                                        'name': '____',
-                                        'level': 3
-                                    }
-                                ]
-                            }
-                        )">add</button>
+                        <div class="section-content hideinprint" style="height: 20px;">
+                            <button class="add-btn"
+                                @click="data.resume.info.push({'name': '____','value': '____'})">add</button>
                         </div>
-                    </div>
-                </section>
-            </div>
-            <div class="content">
-                <div class="resume-head">
-                    <button class="hide-btn" @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
-                        hide
-                    </button>
+                    </section>
+                    <!-- <section class="skills-section">
 
-                    <div class="hide-background"
-                        @click="(e)=>{ e.target.parentElement.classList.remove('hide-section') }">
-                    </div>
+                        <button class="hide-btn"
+                            @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
+                            hide
+                        </button>
 
-                    <span class="lastname">
-                        <p-editable :flag="editableflag" v-model="data.lastname" />
-                    </span><br>
-                    <span class="firstname">
-                        <p-editable :flag="editableflag" v-model="data.firstname" />
-                    </span><br>
-                    <span class="profession">
-                        <p-editable :flag="editableflag" v-model="data.job" />
-                    </span>
+                        <div class="hide-background"
+                            @click="(e)=>{ e.target.parentElement.classList.remove('hide-section') }">
+                        </div>
+
+                        <div class="title">
+                            SKILLS
+                        </div>
+                        <div class="section-content">
+                            <div class="skill" style="position: relative;" v-for="(skill,i) in data.resume.skills">
+
+                                <div class="btns-up-down hideinprint" style="inset-inline-start: -30px;">
+                                    <button class="btn-up" @click="moveItem(i,i-1,data.resume.skills)"></button>
+                                    <button class="btn-down" @click="moveItem(i,i+1,data.resume.skills)"></button>
+                                </div>
+
+                                <button class="delete-btn"
+                                    @click="data.resume.skills.splice(i, 1);changeEditableFlag();">
+                                    delete
+                                </button>
+
+                                <span class="skill-title">
+                                    <p-editable :flag="editableflag" v-model="skill.name" />
+                                </span>
+                                <div class="skill-content">
+                                    <div class="subskill" v-for="(sskill,i) in skill.subskills">
+                                        <div class="btns-up-down hideinprint">
+                                            <button class="btn-up" @click="moveItem(i,i-1,skill.subskills)"></button>
+                                            <button class="btn-down" @click="moveItem(i,i+1,skill.subskills)"></button>
+                                        </div>
+                                        <div class="subskill-name">
+                                            <p-editable :flag="editableflag" v-model="sskill.name" />
+                                        </div>
+                                        <button style="position: relative;margin-inline-start: 30px;" class="delete-btn"
+                                            @click="skill.subskills.splice(i, 1);changeEditableFlag();">
+                                            delete
+                                        </button>
+                                        <div class="subskill-rating">
+                                            <div v-for="(a,i) in sskill.level" @click="sskill.level=i+1"></div>
+                                            <div style="background: gray !important;" v-for="(b,i) in (5-sskill.level)"
+                                                @click="sskill.level=i+sskill.level+1"></div>
+                                        </div>
+                                    </div>
+                                    <div class="subskill hideinprint" style="height: 20px;">
+                                        <button class="add-btn" @click="skill.subskills.push(
+                                                {
+                                                    'name': '____',
+                                                    'level': 3
+                                                }
+                                    )">add</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill hideinprint">
+                                <button class="add-btn" @click="data.resume.skills.push(
+                                {
+                                    'name': '____',
+                                    'subskills': [
+                                        {
+                                            'name': '____',
+                                            'level': 3
+                                        }
+                                    ]
+                                }
+                            )">add</button>
+                            </div>
+                        </div>
+                    </section> -->
                 </div>
-                <section>
 
-                    <button class="hide-btn" style="height: 20px;"
-                        @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
-                        hide
-                    </button>
+                <div class="content">
+                    <div class="resume-head">
+                        
+                        <button class="hide-btn"
+                            @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
+                            hide
+                        </button>
 
-                    <div class="hide-background"
-                        @click="(e)=>{ e.target.parentElement.classList.remove('hide-section') }">
-                    </div>
-
-                    <div class="title">PROFILE</div>
-                    <div class="profile-content">
-                        <p>
-                            <p-editable :flag="editableflag" v-model="data.aboutme" />
-                        </p>
-                    </div>
-                </section>
-                <section class="edu-exp-section">
-
-                    <button class="hide-btn" @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
-                        hide
-                    </button>
-
-                    <div class="hide-background"
-                        @click="(e)=>{ e.target.parentElement.classList.remove('hide-section') }">
-                    </div>
-
-                    <div class="title">
-                        EDUCATION
-                    </div>
-                    <div class="edu-exp-content">
-
-                        <div class="edu-exp-item" v-for="(edu,i) in data.education">
-                            <div class="btns-up-down hideinprint">
-                                <button class="btn-up" @click="moveItem(i,i-1,data.education)"></button>
-                                <button class="btn-down" @click="moveItem(i,i+1,data.education)"></button>
-                            </div>
-                            <button class="delete-btn" @click="data.education.splice(i, 1);changeEditableFlag();">
-                                delete
-                            </button>
-                            <div class="time-line" v-if="i+1 != data.education.length">
-                                <div class="time-line-border"></div>
-                            </div>
-
-                            <div class="date">
-                                <div class="cercle"></div>
-                                <span>
-                                    <p-editable :flag="editableflag" v-model="edu.date" />
-                                </span>
-                            </div>
-                            <div class="edu-exp-item-content">
-                                <span class="edu-exp-item-title">
-                                    <p-editable :flag="editableflag" v-model="edu.title" />
-                                </span>
-                                <br>
-                                <span class="edu-exp-item-place">
-                                    <p-editable :flag="editableflag" v-model="edu.place.name" />
-                                </span>
-                                <br>
-                                <p>
-                                    <p-editable :flag="editableflag" v-model="edu.content" />
-                                </p>
-                            </div>
+                        <div class="hide-background"
+                            @click="(e)=>{ e.target.parentElement.classList.remove('hide-section') }">
                         </div>
-                        <div class="edu-exp-item hideinprint">
-                            <button class="add-btn"
-                                @click="data.education.push({ title: '____', place: { name: '____', link: '#' }, date: '____', details: '____', content: '____' })">add</button>
+
+                        <span class="lastname">
+                            <p-editable :flag="editableflag" v-model="data.lastname" />
+                        </span><br>
+                        <span class="firstname">
+                            <p-editable :flag="editableflag" v-model="data.firstname" />
+                        </span><br>
+                        <span class="profession">
+                            <p-editable :flag="editableflag" v-model="data.job" />
+                        </span>
+
+                        <div class="qrcode">
+                            <div class="qrcode-app-logo"></div>
                         </div>
 
                     </div>
-                </section>
-                <section class="edu-exp-section">
+                    <section>
 
-                    <button class="hide-btn" @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
-                        hide
-                    </button>
+                        <button class="hide-btn" style="height: 20px;"
+                            @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
+                            hide
+                        </button>
 
-                    <div class="hide-background"
-                        @click="(e)=>{ e.target.parentElement.classList.remove('hide-section') }">
-                    </div>
+                        <div class="hide-background"
+                            @click="(e)=>{ e.target.parentElement.classList.remove('hide-section') }">
+                        </div>
 
-                    <div class="title">
-                        EXPERIENCE
-                    </div>
-                    <div class="edu-exp-content">
-                        <div class="edu-exp-item" :style="exp.style" v-for="(exp,i) in data.experience">
-                            <div class="btns-up-down hideinprint">
-                                <button class="btn-up" @click="moveItem(i,i-1,data.experience)"></button>
-                                <button class="btn-down" @click="moveItem(i,i+1,data.experience)"></button>
-                            </div>
-                            <button class="delete-btn" @click="data.experience.splice(i, 1);changeEditableFlag();">
-                                delete
-                            </button>
-                            <div class="time-line" v-if="i+1 != data.experience.length">
-                                <div class="time-line-border"></div>
-                            </div>
-                            <div class="date">
-                                <div class="cercle"></div>
-                                <span>
-                                    <p-editable :flag="editableflag" v-model="exp.date" />
+                        <div class="title">PROFILE</div>
+                        <div class="profile-content">
+                            <p>
+                                <p-editable :flag="editableflag" v-model="data.aboutme" />
+                            </p>
+                        </div>
+                    </section>
+                    <section class="skills-section">
+
+                        <button class="hide-btn"
+                            @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
+                            hide
+                        </button>
+
+                        <div class="hide-background"
+                            @click="(e)=>{ e.target.parentElement.classList.remove('hide-section') }">
+                        </div>
+
+                        <div class="title">
+                            SKILLS
+                        </div>
+                        <div class="section-content">
+                            <div class="skill" style="position: relative;" v-for="(skill,i) in data.resume.skills">
+
+                                <div class="btns-up-down hideinprint" style="inset-inline-start: -30px;">
+                                    <button class="btn-up" @click="moveItem(i,i-1,data.resume.skills)"></button>
+                                    <button class="btn-down" @click="moveItem(i,i+1,data.resume.skills)"></button>
+                                </div>
+
+                                <button class="delete-btn"
+                                    @click="data.resume.skills.splice(i, 1);changeEditableFlag();">
+                                    delete
+                                </button>
+
+                                <span class="skill-title">
+                                    <p-editable :flag="editableflag" v-model="skill.name" />
                                 </span>
+                                <div class="skill-content">
+                                    <div class="subskill" v-for="(sskill,i) in skill.subskills">
+                                        <div class="btns-up-down hideinprint">
+                                            <button class="btn-up" @click="moveItem(i,i-1,skill.subskills)"></button>
+                                            <button class="btn-down" @click="moveItem(i,i+1,skill.subskills)"></button>
+                                        </div>
+                                        <div class="subskill-name">
+                                            ○ <p-editable :flag="editableflag" v-model="sskill.name" />
+                                        </div>
+                                        <button style="position: relative;margin-inline-start: 30px;" class="delete-btn"
+                                            @click="skill.subskills.splice(i, 1);changeEditableFlag();">
+                                            delete
+                                        </button>
+                                        <!-- <div class="subskill-rating">
+                                            <div v-for="(a,i) in sskill.level" @click="sskill.level=i+1"></div>
+                                            <div style="background: gray !important;" v-for="(b,i) in (5-sskill.level)"
+                                                @click="sskill.level=i+sskill.level+1"></div>
+                                        </div> -->
+                                    </div>
+                                    <div class="subskill hideinprint" style="height: 20px;">
+                                        <button class="add-btn" @click="skill.subskills.push(
+                                                {
+                                                    'name': '____',
+                                                    'level': 3
+                                                }
+                                    )">add</button>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="edu-exp-item-content">
-                                <span class="edu-exp-item-title">
-                                    <p-editable :flag="editableflag" v-model="exp.title" />
-                                </span>
-                                <br>
-                                <span class="edu-exp-item-place">
-                                    <p-editable :flag="editableflag" v-model="exp.place.name" />
-                                </span>
-                                <br>
-                                <p>
-                                    <p-editable :flag="editableflag" v-model="exp.content" />
-                                </p>
+                            <div class="skill hideinprint">
+                                <button class="add-btn" @click="data.resume.skills.push(
+                                {
+                                    'name': '____',
+                                    'subskills': [
+                                        {
+                                            'name': '____',
+                                            'level': 3
+                                        }
+                                    ]
+                                }
+                            )">add</button>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="edu-exp-section">
+
+                        <button class="hide-btn"
+                            @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
+                            hide
+                        </button>
+
+                        <div class="hide-background"
+                            @click="(e)=>{ e.target.parentElement.classList.remove('hide-section') }">
+                        </div>
+
+                        <div class="title">
+                            EDUCATION
+                        </div>
+                        <div class="edu-exp-content">
+
+                            <div class="edu-exp-item" v-for="(edu,i) in data.education">
+                                <div class="btns-up-down hideinprint">
+                                    <button class="btn-up" @click="moveItem(i,i-1,data.education)"></button>
+                                    <button class="btn-down" @click="moveItem(i,i+1,data.education)"></button>
+                                </div>
+                                <button class="delete-btn" @click="data.education.splice(i, 1);changeEditableFlag();">
+                                    delete
+                                </button>
+                                <div class="time-line" v-if="i+1 != data.education.length">
+                                    <div class="time-line-border"></div>
+                                </div>
+
+                                <div class="date">
+                                    <div class="cercle"></div>
+                                    <span>
+                                        <p-editable :flag="editableflag" v-model="edu.date" />
+                                    </span>
+                                </div>
+                                <div class="edu-exp-item-content">
+                                    <span class="edu-exp-item-title">
+                                        <p-editable :flag="editableflag" v-model="edu.title" />
+                                    </span>
+                                    <br>
+                                    <span class="edu-exp-item-place">
+                                        <p-editable :flag="editableflag" v-model="edu.place.name" />
+                                    </span>
+                                    <br>
+                                    <p>
+                                        <p-editable :flag="editableflag" v-model="edu.content" />
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="edu-exp-item hideinprint">
+                                <button class="add-btn"
+                                    @click="data.education.push({ title: '____', place: { name: '____', link: '#' }, date: '____', details: '____', content: '____' })">add</button>
                             </div>
 
                         </div>
-                        <div class="edu-exp-item hideinprint">
-                            <button class="add-btn"
-                                @click="data.experience.push({ title: '____', place: { name: '____', link: '#' }, date: '____', details: '____', content: '____' })">add</button>
+                    </section>
+                    <section class="edu-exp-section">
+
+                        <button class="hide-btn"
+                            @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
+                            hide
+                        </button>
+
+                        <div class="hide-background"
+                            @click="(e)=>{ e.target.parentElement.classList.remove('hide-section') }">
                         </div>
-                    </div>
-                </section>
+
+                        <div class="title">
+                            EXPERIENCE
+                        </div>
+                        <div class="edu-exp-content">
+                            <div class="edu-exp-item" :style="exp.style" v-for="(exp,i) in data.experience">
+                                <div class="btns-up-down hideinprint">
+                                    <button class="btn-up" @click="moveItem(i,i-1,data.experience)"></button>
+                                    <button class="btn-down" @click="moveItem(i,i+1,data.experience)"></button>
+                                </div>
+                                <button class="delete-btn" @click="data.experience.splice(i, 1);changeEditableFlag();">
+                                    delete
+                                </button>
+                                <div class="time-line" v-if="i+1 != data.experience.length">
+                                    <div class="time-line-border"></div>
+                                </div>
+                                <div class="date">
+                                    <div class="cercle"></div>
+                                    <span>
+                                        <p-editable :flag="editableflag" v-model="exp.date" />
+                                    </span>
+                                </div>
+                                <div class="edu-exp-item-content">
+                                    <span class="edu-exp-item-title">
+                                        <p-editable :flag="editableflag" v-model="exp.title" />
+                                    </span>
+                                    <br>
+                                    <span class="edu-exp-item-place">
+                                        <p-editable :flag="editableflag" v-model="exp.place.name" />
+                                    </span>
+                                    <br>
+                                    <p>
+                                        <p-editable :flag="editableflag" v-model="exp.content" />
+                                    </p>
+                                </div>
+
+                            </div>
+                            <div class="edu-exp-item hideinprint">
+                                <button class="add-btn"
+                                    @click="data.experience.push({ title: '____', place: { name: '____', link: '#' }, date: '____', details: '____', content: '____' })">add</button>
+                            </div>
+                        </div>
+                    </section>
+                    
+                </div>
             </div>
         </div>
     </div>
@@ -779,6 +943,7 @@
                     }
                 },
                 mounted() {
+                    console.log(this.data);
                     //disable editing some elements
                     [
                         '.add-btn',
