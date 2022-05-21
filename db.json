@@ -116,12 +116,8 @@
                 "value" : "Morocco"
             },
             {
-                "name" : "Birthdate",
-                "value" : "1979/08/12"
-            },
-            {
-                "name" : "Gender",
-                "value" : "Male"
+                "name" : "Age",
+                "value" : "42"
             },
             {
                 "name" : "Gender",
