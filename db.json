@@ -15,7 +15,7 @@
         }
     ],
     "cv": "/assets/zadelkhair_abdelkoddous_resume.pdf",
-    "aboutme": "I have a commercial background and I would like to work in a large group to bring my rigor and sense of initiative. Passionate about business, merchandising and distribution, very invested and professional, I know how to adapt easily and work in a team to achieve the set objectives.",
+    "aboutme": "Experienced and results-oriented Store Manager with 14 years of managerial experience in retail environments. Motivated professional with strengths in supervising employees and promoting optimal customer service. Adept in employee relations, inventory organization, and visual merchandising. Prepared, organized, and trained in product knowledge and store regulations. Committed to creating an environment that is conducive to achieving increased sales and customer satisfaction.",
     "whatido": [],
     "skills": {
         "tech": [],
@@ -28,7 +28,7 @@
                 "name": "E.S.T in berrechid, morocco",
                 "link": ""
             },
-            "date": "2020\n2021",
+            "date": "2005\n2006",
             "details": "",
             "content": ""
         },
@@ -38,27 +38,27 @@
                 "name": "Higher institute of it techniques, trade and management in berrechid, morocco.",
                 "link": ""
             },
-            "date": "2020\n2021",
+            "date": "2002\n2004",
             "details": "",
             "content": ""
         },
         {
-            "title": "Bachelor of baccalaureate modern letter.",
+            "title": "High school degree in modern letter.",
             "place": {
-                "name": "berrechid, morocco.",
+                "name": "Morocco.",
                 "link": ""
             },
-            "date": "2020\n2021",
+            "date": "1999\n2000",
             "details": "",
             "content": ""
         },
         {
-            "title": "·Certificate of continuing education dedicated",
+            "title": "Certificate of continuing education dedicated",
             "place": {
                 "name": "The international university.",
                 "link": ""
             },
-            "date": "2020\n2021",
+            "date": "2017\n2018",
             "details": "",
             "content": ""
         }
@@ -72,7 +72,7 @@
             },
             "date": "12/6/2021\n30/5/2022",
             "details": "",
-            "content": ""
+            "content": "➤ Lead and federate a team of 65 people \n➤ Monitoring of the achievement of objectives (turnover; margin; payroll; rate of ownership. Markdown then analysis and action plan).\n➤ Ensure customer satisfaction \n➤ Define and manage the store strategy \n➤ Develop store sales, results and performance \n➤ Stock the store in an organized and commercial manner \n➤ Train teams \n➤ Apply the procedures to fight against the inventory difference"
         },
         {
             "title": "deputy store manager at Carrefour market",
@@ -82,7 +82,7 @@
             },
             "date": "31/10/2016\n3/11/2021",
             "details": "",
-            "content": ""
+            "content": "➤ Manage a team of 62 people \n➤ Develop store sales, results and performance. \n➤ Apply the procedures to fight against the inventory difference \n➤ Analyze store figures \n➤ Preparation of promotional operations. \n➤ Monitoring & explanation of top and flop indicators. \n➤ Stock the store well \n➤ Organized commercial operations. \n➤ Development of the assortment and referencing. \n➤ Inventory management and its interpretation \n➤ Training of new recruits (fresh department head and market department head)"
         },
         {
             "title": "Head of fresh departement market at Acima",
@@ -92,7 +92,7 @@
             },
             "date": "01/11/2007\n17/10/2016",
             "details": "",
-            "content": ""
+            "content": "➤ Managing a team of 25 people \n➤ Organize the commercial activity of the department \n➤ Order and stock management \n➤ Creation of employee schedules \n➤ Ensure the proper functioning of customer service. \n➤ Apply and control food hygiene standards (HACCP standards)"
         },
         {
             "title": "Fruit and vegetable buyer",
@@ -102,7 +102,7 @@
             },
             "date": "01/01/2005\n17/09/2007",
             "details": "",
-            "content": ""
+            "content": "➤ Ensure a reasonable margin is obtained. \n➤ Have the lowest possible stocks. \n➤ Ensure availability of products in terms of quality and quantity."
         }
     ],
     "resume": {
@@ -122,6 +122,14 @@
             {
                 "name" : "Gender",
                 "value" : "Male"
+            },
+            {
+                "name" : "Gender",
+                "value" : "Male"
+            },
+            {
+                "name" : "Family situation",
+                "value" : "Maried with 3 children"
             },
             {
                 "name" : "Phone",
