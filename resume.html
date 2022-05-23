@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- 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 -->
 
 <head>
     <meta charset="UTF-8">
@@ -62,7 +63,7 @@
         }
 
         .sidebar {
-            width: 20%;
+            width: 25%;
             display: flex;
             flex-direction: column;
             padding-inline-end: 20px;
@@ -80,7 +81,7 @@
         }
 
         .content {
-            width: 80%;
+            width: 75%;
             display: flex;
             flex-direction: column;
             padding-inline-start: 10px;
@@ -122,9 +123,13 @@
         }
 
         .skills-section .subskill-rating {
-            display: flex;
+            display: none;
             flex: 1;
             justify-content: end;
+        }
+
+        .skills-section .subskill-name{
+            display: flex;
         }
 
         .skills-section .subskill-rating>div {
@@ -152,7 +157,7 @@
             font-size: 40px;
         }
 
-        .resume-head .qrcode{
+        .resume-head .qrcode {
             position: absolute;
             height: 100%;
             width: 100px;
@@ -164,12 +169,12 @@
             background-position: center;
         }
 
-        .resume-head .qrcode .qrcode-app-logo{
+        .resume-head .qrcode .qrcode-app-logo {
             position: absolute;
-            height:100%;
+            height: 100%;
             width: 33%;
             right: 100%;
-            top:0;
+            top: 0;
             background-image: url('/assets/images/linkdin.png');
             background-size: 100% auto;
             background-repeat: no-repeat;
@@ -584,7 +589,7 @@
                                 @click="data.resume.info.push({'name': '____','value': '____'})">add</button>
                         </div>
                     </section>
-                    <!-- <section class="skills-section">
+                    <section class="skills-section">
 
                         <button class="hide-btn"
                             @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
@@ -601,47 +606,56 @@
                         <div class="section-content">
                             <div class="skill" style="position: relative;" v-for="(skill,i) in data.resume.skills">
 
-                                <div class="btns-up-down hideinprint" style="inset-inline-start: -30px;">
-                                    <button class="btn-up" @click="moveItem(i,i-1,data.resume.skills)"></button>
-                                    <button class="btn-down" @click="moveItem(i,i+1,data.resume.skills)"></button>
-                                </div>
+                                <template v-if="i!=0">
 
-                                <button class="delete-btn"
-                                    @click="data.resume.skills.splice(i, 1);changeEditableFlag();">
-                                    delete
-                                </button>
-
-                                <span class="skill-title">
-                                    <p-editable :flag="editableflag" v-model="skill.name" />
-                                </span>
-                                <div class="skill-content">
-                                    <div class="subskill" v-for="(sskill,i) in skill.subskills">
-                                        <div class="btns-up-down hideinprint">
-                                            <button class="btn-up" @click="moveItem(i,i-1,skill.subskills)"></button>
-                                            <button class="btn-down" @click="moveItem(i,i+1,skill.subskills)"></button>
-                                        </div>
-                                        <div class="subskill-name">
-                                            <p-editable :flag="editableflag" v-model="sskill.name" />
-                                        </div>
-                                        <button style="position: relative;margin-inline-start: 30px;" class="delete-btn"
-                                            @click="skill.subskills.splice(i, 1);changeEditableFlag();">
-                                            delete
-                                        </button>
-                                        <div class="subskill-rating">
-                                            <div v-for="(a,i) in sskill.level" @click="sskill.level=i+1"></div>
-                                            <div style="background: gray !important;" v-for="(b,i) in (5-sskill.level)"
-                                                @click="sskill.level=i+sskill.level+1"></div>
-                                        </div>
+                                    <div class="btns-up-down hideinprint" style="inset-inline-start: -30px;">
+                                        <button class="btn-up" @click="moveItem(i,i-1,data.resume.skills)"></button>
+                                        <button class="btn-down" @click="moveItem(i,i+1,data.resume.skills)"></button>
                                     </div>
-                                    <div class="subskill hideinprint" style="height: 20px;">
-                                        <button class="add-btn" @click="skill.subskills.push(
+
+                                    <button class="delete-btn"
+                                        @click="data.resume.skills.splice(i, 1);changeEditableFlag();">
+                                        delete
+                                    </button>
+
+                                    <span class="skill-title">
+                                        <p-editable :flag="editableflag" v-model="skill.name" />
+                                    </span>
+                                    <div class="skill-content">
+                                        <div class="subskill" v-for="(sskill,i) in skill.subskills">
+                                            <div class="btns-up-down hideinprint">
+                                                <button class="btn-up"
+                                                    @click="moveItem(i,i-1,skill.subskills)"></button>
+                                                <button class="btn-down"
+                                                    @click="moveItem(i,i+1,skill.subskills)"></button>
+                                            </div>
+                                            <div class="subskill-name">
+                                                <span style="margin-right:5px" >○</span> <p-editable :flag="editableflag" v-model="sskill.name" />
+                                            </div>
+                                            <button style="position: relative;margin-inline-start: 30px;"
+                                                class="delete-btn"
+                                                @click="skill.subskills.splice(i, 1);changeEditableFlag();">
+                                                delete
+                                            </button>
+                                            <div class="subskill-rating">
+                                                <div v-for="(a,i) in sskill.level" @click="sskill.level=i+1"></div>
+                                                <div style="background: gray !important;"
+                                                    v-for="(b,i) in (5-sskill.level)"
+                                                    @click="sskill.level=i+sskill.level+1"></div>
+                                            </div>
+                                        </div>
+                                        <div class="subskill hideinprint" style="height: 20px;">
+                                            <button class="add-btn" @click="skill.subskills.push(
                                                 {
                                                     'name': '____',
                                                     'level': 3
                                                 }
                                     )">add</button>
+                                        </div>
                                     </div>
-                                </div>
+
+                                </template>
+
                             </div>
                             <div class="skill hideinprint">
                                 <button class="add-btn" @click="data.resume.skills.push(
@@ -657,12 +671,12 @@
                             )">add</button>
                             </div>
                         </div>
-                    </section> -->
+                    </section>
                 </div>
 
                 <div class="content">
                     <div class="resume-head">
-                        
+
                         <button class="hide-btn"
                             @click="(e)=>{ e.target.parentElement.classList.add('hide-section'); }">
                             hide
@@ -722,47 +736,57 @@
                         <div class="section-content">
                             <div class="skill" style="position: relative;" v-for="(skill,i) in data.resume.skills">
 
-                                <div class="btns-up-down hideinprint" style="inset-inline-start: -30px;">
-                                    <button class="btn-up" @click="moveItem(i,i-1,data.resume.skills)"></button>
-                                    <button class="btn-down" @click="moveItem(i,i+1,data.resume.skills)"></button>
-                                </div>
+                                <template v-if="i==0" >
 
-                                <button class="delete-btn"
-                                    @click="data.resume.skills.splice(i, 1);changeEditableFlag();">
-                                    delete
-                                </button>
+                                    <div class="btns-up-down hideinprint" style="inset-inline-start: -30px;">
+                                        <button class="btn-up" @click="moveItem(i,i-1,data.resume.skills)"></button>
+                                        <button class="btn-down" @click="moveItem(i,i+1,data.resume.skills)"></button>
+                                    </div>
 
-                                <span class="skill-title">
-                                    <p-editable :flag="editableflag" v-model="skill.name" />
-                                </span>
-                                <div class="skill-content">
-                                    <div class="subskill" v-for="(sskill,i) in skill.subskills">
-                                        <div class="btns-up-down hideinprint">
-                                            <button class="btn-up" @click="moveItem(i,i-1,skill.subskills)"></button>
-                                            <button class="btn-down" @click="moveItem(i,i+1,skill.subskills)"></button>
-                                        </div>
-                                        <div class="subskill-name">
-                                            ○ <p-editable :flag="editableflag" v-model="sskill.name" />
-                                        </div>
-                                        <button style="position: relative;margin-inline-start: 30px;" class="delete-btn"
-                                            @click="skill.subskills.splice(i, 1);changeEditableFlag();">
-                                            delete
-                                        </button>
-                                        <!-- <div class="subskill-rating">
+                                    <button class="delete-btn"
+                                        @click="data.resume.skills.splice(i, 1);changeEditableFlag();">
+                                        delete
+                                    </button>
+
+                                    <span class="skill-title">
+                                        <p-editable :flag="editableflag" v-model="skill.name" />
+                                    </span>
+                                    <div class="skill-content">
+                                        <div class="subskill" v-for="(sskill,i) in skill.subskills">
+                                            <div class="btns-up-down hideinprint">
+                                                <button class="btn-up"
+                                                    @click="moveItem(i,i-1,skill.subskills)"></button>
+                                                <button class="btn-down"
+                                                    @click="moveItem(i,i+1,skill.subskills)"></button>
+                                            </div>
+                                            <div class="subskill-name">
+                                                <span style="margin-right:5px" >○</span>
+                                                <p-editable :flag="editableflag" v-model="sskill.name" />
+                                            </div>
+                                            <button style="position: relative;margin-inline-start: 30px;"
+                                                class="delete-btn"
+                                                @click="skill.subskills.splice(i, 1);changeEditableFlag();">
+                                                delete
+                                            </button>
+                                            <!-- <div class="subskill-rating">
                                             <div v-for="(a,i) in sskill.level" @click="sskill.level=i+1"></div>
                                             <div style="background: gray !important;" v-for="(b,i) in (5-sskill.level)"
-                                                @click="sskill.level=i+sskill.level+1"></div>
-                                        </div> -->
-                                    </div>
-                                    <div class="subskill hideinprint" style="height: 20px;">
-                                        <button class="add-btn" @click="skill.subskills.push(
+                                                    @click="sskill.level=i+sskill.level+1"></div>
+                                            </div> -->
+                                        </div>
+                                        <div class="subskill hideinprint" style="height: 20px;">
+                                            <button class="add-btn" @click="skill.subskills.push(
                                                 {
                                                     'name': '____',
                                                     'level': 3
                                                 }
                                     )">add</button>
+                                        </div>
                                     </div>
-                                </div>
+
+
+                                </template>
+
                             </div>
                             <div class="skill hideinprint">
                                 <button class="add-btn" @click="data.resume.skills.push(
@@ -887,7 +911,7 @@
                             </div>
                         </div>
                     </section>
-                    
+
                 </div>
             </div>
         </div>

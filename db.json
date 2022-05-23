@@ -221,6 +221,102 @@
                         "level": 5
                     }
                 ]
+            },
+            {
+                "name": "Management",
+                "subskills": [
+                    {
+                        "name": "Control of flows",
+                        "level": 5
+                    },
+                    {
+                        "name": "Supply Chain",
+                        "level": 5
+                    },
+                    {
+                        "name": "Team spirit",
+                        "level": 5
+                    },
+                    {
+                        "name": "Organization and rigor",
+                        "level": 5
+                    },
+                    {
+                        "name": "Management",
+                        "level": 5
+                    },
+                    {
+                        "name": "Administrative management",
+                        "level": 5
+                    },
+                    {
+                        "name": "Food Safety",
+                        "level": 5
+                    },
+                    {
+                        "name": "commercial law",
+                        "level": 5
+                    },
+                    {
+                        "name": "money flow",
+                        "level": 5
+                    }
+                ]
+            },
+            {
+                "name": "Softwares",
+                "subskills": [
+                    {
+                        "name": "Word",
+                        "level": 5
+                    },
+                    {
+                        "name": "Excel",
+                        "level": 5
+                    },
+                    {
+                        "name": "Power Point",
+                        "level": 5
+                    },
+                    {
+                        "name": "Computer and internet proficiency certificate",
+                        "level": 5
+                    }
+                ]
+            },
+            {
+                "name": "Languages",
+                "subskills": [
+                    {
+                        "name": "French: Bilingual",
+                        "level": 5
+                    },
+                    {
+                        "name": "English: Advanced",
+                        "level": 5
+                    },
+                    {
+                        "name": "Arabic: Native",
+                        "level": 5
+                    }
+                ]
+            },
+            {
+                "name": "Interests",
+                "subskills": [
+                    {
+                        "name": "Rugby (XV player at CAP Périgueux)",
+                        "level": 5
+                    },
+                    {
+                        "name": "CrossFit and Trail",
+                        "level": 5
+                    },
+                    {
+                        "name": "Former member of the BDE of the IAE of Perpignan",
+                        "level": 5
+                    }
+                ]
             }
         ]
     }
