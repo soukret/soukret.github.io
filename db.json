@@ -11,7 +11,7 @@
         {
             "name": "linkedin",
             "logo": "fab fa-linkedin-in",
-            "value": "https://www.linkedin.com/in/abdelkoddous-zadelkhair-163b64164/"
+            "value": ""
         }
     ],
     "cv": "/assets/soukret_store_manager_resume.pdf",
@@ -90,9 +90,19 @@
                 "name": "Morocco",
                 "link": ""
             },
-            "date": "01/11/2007\n17/10/2016",
+            "date": "17/10/2009\n17/10/2016",
             "details": "",
             "content": "➤ Managing a team of 25 people \n➤ Organize the commercial activity of the department \n➤ Order and stock management \n➤ Creation of employee schedules \n➤ Ensure the proper functioning of customer service. \n➤ Apply and control food hygiene standards (HACCP standards)"
+        },
+        {
+            "title": "Section manager fruits and vegetables at Acima",
+            "place": {
+                "name": "Morocco",
+                "link": ""
+            },
+            "date": "01/11/2007\n17/10/2009",
+            "details": "",
+            "content": "➤ Achieve maximum turnover in line with the objectives set \n➤ Establish proposals to improve these results action plans \n➤ Make sure you get a reasonable margin \n➤ Have the lowest possible stocks \n➤ Supervise and lead the sales team"
         },
         {
             "title": "Fruit and vegetable buyer",
@@ -202,10 +212,6 @@
                     },
                     {
                         "name": "Management standards of quality and safety",
-                        "level": 5
-                    },
-                    {
-                        "name": "Master of the internal management -gold V5-",
                         "level": 5
                     },
                     {
